@@ -1,0 +1,2923 @@
+{
+  "requesterUsername": "emperuna",
+  "requesterAvatarIconUri": {
+    "$mid": 1,
+    "path": "/u/152013192",
+    "scheme": "https",
+    "authority": "avatars.githubusercontent.com",
+    "query": "v=4"
+  },
+  "responderUsername": "GitHub Copilot",
+  "responderAvatarIconUri": {
+    "id": "copilot"
+  },
+  "initialLocation": "panel",
+  "requests": [
+    {
+      "requestId": "request_db318d6f-c918-4140-86dc-e79dc63ad313",
+      "message": {
+        "text": "I want to make admin dashboard in web that accept user seller request to become a seller. What is the best way to do it?",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 120
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 121
+            },
+            "text": "I want to make admin dashboard in web that accept user seller request to become a seller. What is the best way to do it?",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "kind": "file",
+            "id": "vscode.implicit.viewport",
+            "name": "file:profile_screen.dart",
+            "value": {
+              "uri": {
+                "$mid": 1,
+                "fsPath": "d:\\repos\\haul-app\\lib\\screens\\buyer\\profile_screen.dart",
+                "_sep": 1,
+                "external": "file:///d%3A/repos/haul-app/lib/screens/buyer/profile_screen.dart",
+                "path": "/D:/repos/haul-app/lib/screens/buyer/profile_screen.dart",
+                "scheme": "file"
+              },
+              "range": {
+                "startLineNumber": 112,
+                "startColumn": 1,
+                "endLineNumber": 150,
+                "endColumn": 50
+              }
+            },
+            "modelDescription": "User's current visible code"
+          }
+        ]
+      },
+      "response": [
+        {
+          "kind": "progressMessage",
+          "content": {
+            "value": "Determining user intent...",
+            "uris": {}
+          }
+        },
+        {
+          "value": "Sure, here's a proposed directory structure for a web admin dashboard project:\n\n",
+          "supportThemeIcons": false,
+          "supportHtml": false
+        },
+        {
+          "kind": "progressMessage",
+          "content": {
+            "value": "Generating workspace preview...",
+            "uris": {}
+          }
+        },
+        {
+          "kind": "progressMessage",
+          "content": {
+            "value": "Generating workspace preview...",
+            "uris": {}
+          }
+        },
+        {
+          "label": "admin-dashboard",
+          "uri": {
+            "$mid": 1,
+            "external": "vscode-copilot-workspace://b6c9a116-640c-4bb5-83c9-d4de5fa2569f/admin-dashboard",
+            "path": "/admin-dashboard",
+            "scheme": "vscode-copilot-workspace",
+            "authority": "b6c9a116-640c-4bb5-83c9-d4de5fa2569f"
+          },
+          "children": [
+            {
+              "label": "admin-dashboard",
+              "uri": {
+                "$mid": 1,
+                "fsPath": "\\admin-dashboard\\admin-dashboard",
+                "_sep": 1,
+                "external": "vscode-copilot-workspace://b6c9a116-640c-4bb5-83c9-d4de5fa2569f/admin-dashboard/admin-dashboard",
+                "path": "/admin-dashboard/admin-dashboard",
+                "scheme": "vscode-copilot-workspace",
+                "authority": "b6c9a116-640c-4bb5-83c9-d4de5fa2569f"
+              },
+              "children": [
+                {
+                  "label": "public",
+                  "uri": {
+                    "$mid": 1,
+                    "fsPath": "\\admin-dashboard\\admin-dashboard\\public",
+                    "_sep": 1,
+                    "external": "vscode-copilot-workspace://b6c9a116-640c-4bb5-83c9-d4de5fa2569f/admin-dashboard/admin-dashboard/public",
+                    "path": "/admin-dashboard/admin-dashboard/public",
+                    "scheme": "vscode-copilot-workspace",
+                    "authority": "b6c9a116-640c-4bb5-83c9-d4de5fa2569f"
+                  },
+                  "children": [
+                    {
+                      "label": "index.html",
+                      "uri": {
+                        "$mid": 1,
+                        "fsPath": "\\admin-dashboard\\admin-dashboard\\public\\index.html",
+                        "_sep": 1,
+                        "external": "vscode-copilot-workspace://b6c9a116-640c-4bb5-83c9-d4de5fa2569f/admin-dashboard/admin-dashboard/public/index.html",
+                        "path": "/admin-dashboard/admin-dashboard/public/index.html",
+                        "scheme": "vscode-copilot-workspace",
+                        "authority": "b6c9a116-640c-4bb5-83c9-d4de5fa2569f"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "label": "src",
+                  "uri": {
+                    "$mid": 1,
+                    "fsPath": "\\admin-dashboard\\admin-dashboard\\src",
+                    "_sep": 1,
+                    "external": "vscode-copilot-workspace://b6c9a116-640c-4bb5-83c9-d4de5fa2569f/admin-dashboard/admin-dashboard/src",
+                    "path": "/admin-dashboard/admin-dashboard/src",
+                    "scheme": "vscode-copilot-workspace",
+                    "authority": "b6c9a116-640c-4bb5-83c9-d4de5fa2569f"
+                  },
+                  "children": [
+                    {
+                      "label": "components",
+                      "uri": {
+                        "$mid": 1,
+                        "fsPath": "\\admin-dashboard\\admin-dashboard\\src\\components",
+                        "_sep": 1,
+                        "external": "vscode-copilot-workspace://b6c9a116-640c-4bb5-83c9-d4de5fa2569f/admin-dashboard/admin-dashboard/src/components",
+                        "path": "/admin-dashboard/admin-dashboard/src/components",
+                        "scheme": "vscode-copilot-workspace",
+                        "authority": "b6c9a116-640c-4bb5-83c9-d4de5fa2569f"
+                      },
+                      "children": [
+                        {
+                          "label": "SellerRequestsList.jsx",
+                          "uri": {
+                            "$mid": 1,
+                            "fsPath": "\\admin-dashboard\\admin-dashboard\\src\\components\\SellerRequestsList.jsx",
+                            "_sep": 1,
+                            "external": "vscode-copilot-workspace://b6c9a116-640c-4bb5-83c9-d4de5fa2569f/admin-dashboard/admin-dashboard/src/components/SellerRequestsList.jsx",
+                            "path": "/admin-dashboard/admin-dashboard/src/components/SellerRequestsList.jsx",
+                            "scheme": "vscode-copilot-workspace",
+                            "authority": "b6c9a116-640c-4bb5-83c9-d4de5fa2569f"
+                          }
+                        },
+                        {
+                          "label": "SellerRequestItem.jsx",
+                          "uri": {
+                            "$mid": 1,
+                            "fsPath": "\\admin-dashboard\\admin-dashboard\\src\\components\\SellerRequestItem.jsx",
+                            "_sep": 1,
+                            "external": "vscode-copilot-workspace://b6c9a116-640c-4bb5-83c9-d4de5fa2569f/admin-dashboard/admin-dashboard/src/components/SellerRequestItem.jsx",
+                            "path": "/admin-dashboard/admin-dashboard/src/components/SellerRequestItem.jsx",
+                            "scheme": "vscode-copilot-workspace",
+                            "authority": "b6c9a116-640c-4bb5-83c9-d4de5fa2569f"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "label": "pages",
+                      "uri": {
+                        "$mid": 1,
+                        "fsPath": "\\admin-dashboard\\admin-dashboard\\src\\pages",
+                        "_sep": 1,
+                        "external": "vscode-copilot-workspace://b6c9a116-640c-4bb5-83c9-d4de5fa2569f/admin-dashboard/admin-dashboard/src/pages",
+                        "path": "/admin-dashboard/admin-dashboard/src/pages",
+                        "scheme": "vscode-copilot-workspace",
+                        "authority": "b6c9a116-640c-4bb5-83c9-d4de5fa2569f"
+                      },
+                      "children": [
+                        {
+                          "label": "Dashboard.jsx",
+                          "uri": {
+                            "$mid": 1,
+                            "fsPath": "\\admin-dashboard\\admin-dashboard\\src\\pages\\Dashboard.jsx",
+                            "_sep": 1,
+                            "external": "vscode-copilot-workspace://b6c9a116-640c-4bb5-83c9-d4de5fa2569f/admin-dashboard/admin-dashboard/src/pages/Dashboard.jsx",
+                            "path": "/admin-dashboard/admin-dashboard/src/pages/Dashboard.jsx",
+                            "scheme": "vscode-copilot-workspace",
+                            "authority": "b6c9a116-640c-4bb5-83c9-d4de5fa2569f"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "label": "services",
+                      "uri": {
+                        "$mid": 1,
+                        "fsPath": "\\admin-dashboard\\admin-dashboard\\src\\services",
+                        "_sep": 1,
+                        "external": "vscode-copilot-workspace://b6c9a116-640c-4bb5-83c9-d4de5fa2569f/admin-dashboard/admin-dashboard/src/services",
+                        "path": "/admin-dashboard/admin-dashboard/src/services",
+                        "scheme": "vscode-copilot-workspace",
+                        "authority": "b6c9a116-640c-4bb5-83c9-d4de5fa2569f"
+                      },
+                      "children": [
+                        {
+                          "label": "api.js",
+                          "uri": {
+                            "$mid": 1,
+                            "fsPath": "\\admin-dashboard\\admin-dashboard\\src\\services\\api.js",
+                            "_sep": 1,
+                            "external": "vscode-copilot-workspace://b6c9a116-640c-4bb5-83c9-d4de5fa2569f/admin-dashboard/admin-dashboard/src/services/api.js",
+                            "path": "/admin-dashboard/admin-dashboard/src/services/api.js",
+                            "scheme": "vscode-copilot-workspace",
+                            "authority": "b6c9a116-640c-4bb5-83c9-d4de5fa2569f"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "label": "App.jsx",
+                      "uri": {
+                        "$mid": 1,
+                        "fsPath": "\\admin-dashboard\\admin-dashboard\\src\\App.jsx",
+                        "_sep": 1,
+                        "external": "vscode-copilot-workspace://b6c9a116-640c-4bb5-83c9-d4de5fa2569f/admin-dashboard/admin-dashboard/src/App.jsx",
+                        "path": "/admin-dashboard/admin-dashboard/src/App.jsx",
+                        "scheme": "vscode-copilot-workspace",
+                        "authority": "b6c9a116-640c-4bb5-83c9-d4de5fa2569f"
+                      }
+                    },
+                    {
+                      "label": "index.js",
+                      "uri": {
+                        "$mid": 1,
+                        "fsPath": "\\admin-dashboard\\admin-dashboard\\src\\index.js",
+                        "_sep": 1,
+                        "external": "vscode-copilot-workspace://b6c9a116-640c-4bb5-83c9-d4de5fa2569f/admin-dashboard/admin-dashboard/src/index.js",
+                        "path": "/admin-dashboard/admin-dashboard/src/index.js",
+                        "scheme": "vscode-copilot-workspace",
+                        "authority": "b6c9a116-640c-4bb5-83c9-d4de5fa2569f"
+                      }
+                    },
+                    {
+                      "label": "styles",
+                      "uri": {
+                        "$mid": 1,
+                        "fsPath": "\\admin-dashboard\\admin-dashboard\\src\\styles",
+                        "_sep": 1,
+                        "external": "vscode-copilot-workspace://b6c9a116-640c-4bb5-83c9-d4de5fa2569f/admin-dashboard/admin-dashboard/src/styles",
+                        "path": "/admin-dashboard/admin-dashboard/src/styles",
+                        "scheme": "vscode-copilot-workspace",
+                        "authority": "b6c9a116-640c-4bb5-83c9-d4de5fa2569f"
+                      },
+                      "children": [
+                        {
+                          "label": "main.css",
+                          "uri": {
+                            "$mid": 1,
+                            "fsPath": "\\admin-dashboard\\admin-dashboard\\src\\styles\\main.css",
+                            "_sep": 1,
+                            "external": "vscode-copilot-workspace://b6c9a116-640c-4bb5-83c9-d4de5fa2569f/admin-dashboard/admin-dashboard/src/styles/main.css",
+                            "path": "/admin-dashboard/admin-dashboard/src/styles/main.css",
+                            "scheme": "vscode-copilot-workspace",
+                            "authority": "b6c9a116-640c-4bb5-83c9-d4de5fa2569f"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "package.json",
+                  "uri": {
+                    "$mid": 1,
+                    "fsPath": "\\admin-dashboard\\admin-dashboard\\package.json",
+                    "_sep": 1,
+                    "external": "vscode-copilot-workspace://b6c9a116-640c-4bb5-83c9-d4de5fa2569f/admin-dashboard/admin-dashboard/package.json",
+                    "path": "/admin-dashboard/admin-dashboard/package.json",
+                    "scheme": "vscode-copilot-workspace",
+                    "authority": "b6c9a116-640c-4bb5-83c9-d4de5fa2569f"
+                  }
+                },
+                {
+                  "label": "README.md",
+                  "uri": {
+                    "$mid": 1,
+                    "fsPath": "\\admin-dashboard\\admin-dashboard\\README.md",
+                    "_sep": 1,
+                    "external": "vscode-copilot-workspace://b6c9a116-640c-4bb5-83c9-d4de5fa2569f/admin-dashboard/admin-dashboard/README.md",
+                    "path": "/admin-dashboard/admin-dashboard/README.md",
+                    "scheme": "vscode-copilot-workspace",
+                    "authority": "b6c9a116-640c-4bb5-83c9-d4de5fa2569f"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "command",
+          "command": {
+            "$ident": "github.copilot.createProject /36",
+            "id": "__vsc3bfbedcd-c5b4-4e55-93e6-c6e897a190a1",
+            "title": "Create Workspace...",
+            "arguments": [
+              "github.copilot.createProject /36"
+            ]
+          }
+        }
+      ],
+      "responseId": "response_8030f361-a57a-4f12-916d-4a7fa5520671",
+      "result": {
+        "timings": {
+          "firstProgress": 2221,
+          "totalElapsed": 2750
+        },
+        "metadata": {
+          "codeBlocks": [],
+          "modelMessageId": "5fc88f83-e714-4691-8f46-155afad5d52f",
+          "responseId": "b6c9a116-640c-4bb5-83c9-d4de5fa2569f",
+          "sessionId": "03de48be-c3e7-4b46-8f8a-53fb18575b4c",
+          "agentId": "github.copilot.workspace",
+          "command": "new"
+        }
+      },
+      "followups": [],
+      "isCanceled": false,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.workspace",
+        "description": "Ask about your workspace",
+        "metadata": {
+          "sampleRequest": "How do I build this project?",
+          "themeIcon": {
+            "id": "code"
+          },
+          "hasFollowups": true,
+          "supportIssueReporting": false
+        },
+        "name": "workspace",
+        "fullName": "Workspace",
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "ask"
+        ],
+        "slashCommands": [
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works"
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "create_tests",
+                "description": "The user wants to generate unit tests.",
+                "examples": [
+                  "Generate tests for my selection using pytest."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "sampleRequest": "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+          },
+          {
+            "name": "new",
+            "description": "Scaffold code for a new file or project in a workspace",
+            "sampleRequest": "Create a RESTful API server using typescript",
+            "isSticky": true,
+            "disambiguation": [
+              {
+                "category": "create_new_workspace_or_extension",
+                "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+                "examples": [
+                  "Scaffold a Node server.",
+                  "Create a sample project which uses the fileSystemProvider API.",
+                  "react application"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "newNotebook",
+            "description": "Create a new Jupyter Notebook",
+            "sampleRequest": "How do I create a notebook to load data from a csv file?",
+            "disambiguation": [
+              {
+                "category": "create_jupyter_notebook",
+                "description": "The user wants to create a new Jupyter notebook in Visual Studio Code.",
+                "examples": [
+                  "Create a notebook to analyze this CSV file."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "setupTests",
+            "description": "Set up tests in your project (Experimental)",
+            "sampleRequest": "add playwright tests to my project",
+            "when": "config.github.copilot.chat.setupTests.enabled",
+            "disambiguation": [
+              {
+                "category": "set_up_tests",
+                "description": "The user wants to configure project test setup, framework, or test runner. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Set up tests for this project."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": [
+          {
+            "category": "workspace_project_questions",
+            "description": "The user wants to learn about or update the code or files in their current workspace. Questions in this category may be about understanding what the whole workspace does or locating the implementation of some code. This does not include generating or updating tests.",
+            "examples": [
+              "What does this project do?"
+            ]
+          },
+          {
+            "category": "find_code_in_workspace",
+            "description": "The user wants to locate the implementation of some functionality in their current workspace.",
+            "examples": [
+              "Where is the tree widget implemented?"
+            ]
+          },
+          {
+            "category": "generate_with_workspace_context",
+            "description": "The user wants to generate code based on multiple files in the workspace and did not specify which files to reference.",
+            "examples": [
+              "Create a README for this project."
+            ]
+          }
+        ]
+      },
+      "slashCommand": {
+        "name": "new",
+        "description": "Scaffold code for a new file or project in a workspace",
+        "sampleRequest": "Create a RESTful API server using typescript",
+        "isSticky": true,
+        "disambiguation": [
+          {
+            "category": "create_new_workspace_or_extension",
+            "description": "The user wants to create a complete Visual Studio Code workspace from scratch, such as a new application or a Visual Studio Code extension. Use this category only if the question relates to generating or creating new workspaces in Visual Studio Code. Do not use this category for updating existing code or generating sample code snippets",
+            "examples": [
+              "Scaffold a Node server.",
+              "Create a sample project which uses the fileSystemProvider API.",
+              "react application"
+            ]
+          }
+        ]
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "d:\\repos\\haul-app\\lib\\screens\\buyer\\profile_screen.dart",
+            "_sep": 1,
+            "external": "file:///d%3A/repos/haul-app/lib/screens/buyer/profile_screen.dart",
+            "path": "/D:/repos/haul-app/lib/screens/buyer/profile_screen.dart",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [],
+      "timestamp": 1746853126228
+    },
+    {
+      "requestId": "request_6980fbd6-07c4-4301-a397-0dd4250f3593",
+      "message": {
+        "text": "Do i have to make new project for that?",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 39
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 40
+            },
+            "text": "Do i have to make new project for that?",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "kind": "file",
+            "id": "vscode.implicit.viewport",
+            "name": "file:profile_screen.dart",
+            "value": {
+              "uri": {
+                "$mid": 1,
+                "fsPath": "d:\\repos\\haul-app\\lib\\screens\\buyer\\profile_screen.dart",
+                "_sep": 1,
+                "external": "file:///d%3A/repos/haul-app/lib/screens/buyer/profile_screen.dart",
+                "path": "/D:/repos/haul-app/lib/screens/buyer/profile_screen.dart",
+                "scheme": "file"
+              },
+              "range": {
+                "startLineNumber": 112,
+                "startColumn": 1,
+                "endLineNumber": 150,
+                "endColumn": 50
+              }
+            },
+            "modelDescription": "User's current visible code"
+          }
+        ]
+      },
+      "response": [
+        {
+          "value": "# Admin Dashboard for Seller Requests\n\nYou don't need to create an entirely new project for this. Since you already have a Flutter app with Firebase integration, you have several options:\n\n## Option 1: Add Admin Web Dashboard to Your Existing Flutter Project\n\n```bash\n# Add web support to your Flutter project if not already enabled\ncd d:\\repos\\haul-app\nflutter create --platforms=web .\n```\n\n## Option 2: Create a Simple Web Dashboard in Your Project\n\nYou can create a simple web admin interface using Flutter for web:\n\n````dart\n",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/d:/repos/haul-app/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "codeblockUri",
+          "uri": {
+            "$mid": 1,
+            "external": "file:///d%3A/repos/haul-app/lib/screens/admin/seller_request_dashboard.dart",
+            "path": "/d:/repos/haul-app/lib/screens/admin/seller_request_dashboard.dart",
+            "scheme": "file"
+          }
+        },
+        {
+          "value": "import 'package:flutter/material.dart';\nimport 'package:cloud_firestore/cloud_firestore.dart';\nimport 'package:google_fonts/google_fonts.dart';\nimport '/models/user_profile_model.dart';\nimport '/widgets/loading_screen.dart';\n\nclass AdminSellerRequestDashboard extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: Text(\n          'Seller Requests Dashboard',\n          style: GoogleFonts.poppins(fontWeight: FontWeight.bold),\n        ),\n      ),\n      body: StreamBuilder<QuerySnapshot>(\n        stream: FirebaseFirestore.instance\n            .collection('sellerRequests')\n            .where('status', isEqualTo: 'pending')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));\n          }\n          \n          if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {\n            return Center(\n              child: Text(\n                'No pending seller requests',\n                style: GoogleFonts.poppins(),\n              ),\n            );\n          }\n          \n          return ListView.builder(\n            padding: const EdgeInsets.all(16),\n            itemCount: snapshot.data!.docs.length,\n            itemBuilder: (context, index) {\n              final doc = snapshot.data!.docs[index];\n              final data = doc.data() as Map<String, dynamic>;\n              \n              return Card(\n                margin: const EdgeInsets.only(bottom: 16),\n                child: Padding(\n                  padding: const EdgeInsets.all(16),\n                  child: Column(\n                    crossAxisAlignment: CrossAxisAlignment.start,\n                    children: [\n                      Text(\n                        data['fullName'] ?? 'Unknown',\n                        style: GoogleFonts.poppins(\n                          fontSize: 18,\n                          fontWeight: FontWeight.bold,\n                        ),\n                      ),\n                      const SizedBox(height: 8),\n                      Text(\n                        'Email: ${data['email']}',\n                        style: GoogleFonts.poppins(fontSize: 14),\n                      ),\n                      Text(\n                        'Phone: ${data['phone']}',\n                        style: GoogleFonts.poppins(fontSize: 14),\n                      ),\n                      Text(\n                        'Store name: ${data['storeName']}',\n                        style: GoogleFonts.poppins(fontSize: 14),\n                      ),\n                      const SizedBox(height: 16),\n                      Row(\n                        children: [\n                          Expanded(\n                            child: OutlinedButton(\n                              onPressed: () => _rejectRequest(doc.id),\n                              style: OutlinedButton.styleFrom(\n                                foregroundColor: Colors.red,\n                              ),\n                              child: Text(\n                                'Reject',\n                                style: GoogleFonts.poppins(),\n                              ),\n                            ),\n                          ),\n                          const SizedBox(width: 16),\n                          Expanded(\n                            child: ElevatedButton(\n                              onPressed: () => _approveRequest(doc.id, data['userId']),\n                              style: ElevatedButton.styleFrom(\n                                backgroundColor: Colors.black,\n                              ),\n                              child: Text(\n                                'Approve',\n                                style: GoogleFonts.poppins(),\n                              ),\n                            ),\n                          ),\n                        ],\n                      ),\n                    ],\n                  ),\n                ),\n              );\n            },\n          );\n        },\n      ),\n    );\n  }\n\n  Future<void> _approveRequest(String requestId, String userId) async {\n    // Update request status\n    await FirebaseFirestore.instance\n        .collection('sellerRequests')\n        .doc(requestId)\n        .update({'status': 'approved', 'approvedAt': FieldValue.serverTimestamp()});\n    \n    // Update user profile to add seller role\n    await FirebaseFirestore.instance\n        .collection('users')\n        .doc(userId)\n        .update({'roles': FieldValue.arrayUnion(['seller'])});\n  }\n\n  Future<void> _rejectRequest(String requestId) async {\n    await FirebaseFirestore.instance\n        .collection('sellerRequests')\n        .doc(requestId)\n        .update({'status': 'rejected', 'rejectedAt': FieldValue.serverTimestamp()});\n  }\n}\n````\n\n## Option 3: Create a Separate Web Admin Portal\n\nIf you prefer a dedicated admin portal with traditional web technologies:\n\n1. Create a simple React, Vue, or plain HTML/JS project\n2. Use Firebase Web SDK to authenticate admins and display seller requests\n3. Connect to the same Firebase project as your Flutter app\n\n## Implementing the Solution\n\nThe simplest approach is to add an admin role check to your Flutter app:\n\n````dart\n",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/d:/repos/haul-app/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "codeblockUri",
+          "uri": {
+            "$mid": 1,
+            "external": "file:///d%3A/repos/haul-app/lib/models/user_profile_model.dart",
+            "path": "/d:/repos/haul-app/lib/models/user_profile_model.dart",
+            "scheme": "file"
+          }
+        },
+        {
+          "value": "// Add this to your UserProfile model\nclass UserProfile {\n  // ...existing code...\n  \n  List<String> roles;\n  \n  bool get isAdmin => roles.contains('admin');\n  bool get isSeller => roles.contains('seller');\n  \n  // Update your constructor and fromJson methods\n}\n````\n\nThen create a route to the admin dashboard that's only accessible to admin users.\n\nWould you like me to expand on any specific aspect of the implementation?",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/d:/repos/haul-app/",
+            "scheme": "file"
+          }
+        }
+      ],
+      "responseId": "response_95547953-087d-4cd1-b122-810e22e82674",
+      "result": {
+        "timings": {
+          "firstProgress": 12559,
+          "totalElapsed": 42978
+        },
+        "metadata": {
+          "codeBlocks": [
+            {
+              "code": "# Add web support to your Flutter project if not already enabled\ncd d:\\repos\\haul-app\nflutter create --platforms=web .\n",
+              "language": "bash",
+              "markdownBeforeBlock": "# Admin Dashboard for Seller Requests\n\nYou don't need to create an entirely new project for this. Since you already have a Flutter app with Firebase integration, you have several options:\n\n## Option 1: Add Admin Web Dashboard to Your Existing Flutter Project\n\n"
+            },
+            {
+              "code": "import 'package:flutter/material.dart';\nimport 'package:cloud_firestore/cloud_firestore.dart';\nimport 'package:google_fonts/google_fonts.dart';\nimport '/models/user_profile_model.dart';\nimport '/widgets/loading_screen.dart';\n\nclass AdminSellerRequestDashboard extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      appBar: AppBar(\n        title: Text(\n          'Seller Requests Dashboard',\n          style: GoogleFonts.poppins(fontWeight: FontWeight.bold),\n        ),\n      ),\n      body: StreamBuilder<QuerySnapshot>(\n        stream: FirebaseFirestore.instance\n            .collection('sellerRequests')\n            .where('status', isEqualTo: 'pending')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));\n          }\n          \n          if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {\n            return Center(\n              child: Text(\n                'No pending seller requests',\n                style: GoogleFonts.poppins(),\n              ),\n            );\n          }\n          \n          return ListView.builder(\n            padding: const EdgeInsets.all(16),\n            itemCount: snapshot.data!.docs.length,\n            itemBuilder: (context, index) {\n              final doc = snapshot.data!.docs[index];\n              final data = doc.data() as Map<String, dynamic>;\n              \n              return Card(\n                margin: const EdgeInsets.only(bottom: 16),\n                child: Padding(\n                  padding: const EdgeInsets.all(16),\n                  child: Column(\n                    crossAxisAlignment: CrossAxisAlignment.start,\n                    children: [\n                      Text(\n                        data['fullName'] ?? 'Unknown',\n                        style: GoogleFonts.poppins(\n                          fontSize: 18,\n                          fontWeight: FontWeight.bold,\n                        ),\n                      ),\n                      const SizedBox(height: 8),\n                      Text(\n                        'Email: ${data['email']}',\n                        style: GoogleFonts.poppins(fontSize: 14),\n                      ),\n                      Text(\n                        'Phone: ${data['phone']}',\n                        style: GoogleFonts.poppins(fontSize: 14),\n                      ),\n                      Text(\n                        'Store name: ${data['storeName']}',\n                        style: GoogleFonts.poppins(fontSize: 14),\n                      ),\n                      const SizedBox(height: 16),\n                      Row(\n                        children: [\n                          Expanded(\n                            child: OutlinedButton(\n                              onPressed: () => _rejectRequest(doc.id),\n                              style: OutlinedButton.styleFrom(\n                                foregroundColor: Colors.red,\n                              ),\n                              child: Text(\n                                'Reject',\n                                style: GoogleFonts.poppins(),\n                              ),\n                            ),\n                          ),\n                          const SizedBox(width: 16),\n                          Expanded(\n                            child: ElevatedButton(\n                              onPressed: () => _approveRequest(doc.id, data['userId']),\n                              style: ElevatedButton.styleFrom(\n                                backgroundColor: Colors.black,\n                              ),\n                              child: Text(\n                                'Approve',\n                                style: GoogleFonts.poppins(),\n                              ),\n                            ),\n                          ),\n                        ],\n                      ),\n                    ],\n                  ),\n                ),\n              );\n            },\n          );\n        },\n      ),\n    );\n  }\n\n  Future<void> _approveRequest(String requestId, String userId) async {\n    // Update request status\n    await FirebaseFirestore.instance\n        .collection('sellerRequests')\n        .doc(requestId)\n        .update({'status': 'approved', 'approvedAt': FieldValue.serverTimestamp()});\n    \n    // Update user profile to add seller role\n    await FirebaseFirestore.instance\n        .collection('users')\n        .doc(userId)\n        .update({'roles': FieldValue.arrayUnion(['seller'])});\n  }\n\n  Future<void> _rejectRequest(String requestId) async {\n    await FirebaseFirestore.instance\n        .collection('sellerRequests')\n        .doc(requestId)\n        .update({'status': 'rejected', 'rejectedAt': FieldValue.serverTimestamp()});\n  }\n}\n",
+              "resource": {
+                "$mid": 1,
+                "path": "/d:/repos/haul-app/lib/screens/admin/seller_request_dashboard.dart",
+                "scheme": "file"
+              },
+              "language": "dart",
+              "markdownBeforeBlock": "\n## Option 2: Create a Simple Web Dashboard in Your Project\n\nYou can create a simple web admin interface using Flutter for web:\n\n"
+            },
+            {
+              "code": "// Add this to your UserProfile model\nclass UserProfile {\n  // ...existing code...\n  \n  List<String> roles;\n  \n  bool get isAdmin => roles.contains('admin');\n  bool get isSeller => roles.contains('seller');\n  \n  // Update your constructor and fromJson methods\n}\n",
+              "resource": {
+                "$mid": 1,
+                "path": "/d:/repos/haul-app/lib/models/user_profile_model.dart",
+                "scheme": "file"
+              },
+              "language": "dart",
+              "markdownBeforeBlock": "\n## Option 3: Create a Separate Web Admin Portal\n\nIf you prefer a dedicated admin portal with traditional web technologies:\n\n1. Create a simple React, Vue, or plain HTML/JS project\n2. Use Firebase Web SDK to authenticate admins and display seller requests\n3. Connect to the same Firebase project as your Flutter app\n\n## Implementing the Solution\n\nThe simplest approach is to add an admin role check to your Flutter app:\n\n"
+            }
+          ],
+          "modelMessageId": "2dd8e5e1-7838-47d9-97d6-f4e38930c986",
+          "responseId": "abe4c3b4-88ee-43e3-abe8-24a5086c2bc1",
+          "sessionId": "545136a8-d641-42a6-aab7-d6a3a5702fba",
+          "agentId": "github.copilot.default"
+        }
+      },
+      "followups": [],
+      "isCanceled": false,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.default",
+        "description": "Ask Copilot",
+        "metadata": {
+          "themeIcon": {
+            "id": "copilot"
+          },
+          "hasFollowups": true,
+          "helpTextPrefix": "You can ask me general programming questions, or chat with the following participants which have specialized expertise and can perform actions:",
+          "helpTextVariablesPrefix": "You can also help me understand your question by using the following variables to give me extra context:",
+          "helpTextPostfix": {
+            "value": "To have a great conversation, ask me questions as if I was a real programmer:\n\n* **Show me the code** you want to talk about by having the files open and selecting the most important lines.\n* **Make refinements** by asking me follow-up questions, adding clarifications, providing errors, etc.\n* **Review my suggested code** and tell me about issues or improvements, so I can iterate on it.\n\nYou can also ask me questions about your editor selection by [starting an inline chat session](command:inlineChat.start).\n\nLearn more about [GitHub Copilot](https://docs.github.com/copilot/using-github-copilot/getting-started-with-github-copilot?tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted) in [Visual Studio Code](https://code.visualstudio.com/docs/copilot/overview). Or explore the [Copilot walkthrough](command:github.copilot.open.walkthrough).",
+            "isTrusted": {
+              "enabledCommands": [
+                "inlineChat.start",
+                "github.copilot.open.walkthrough"
+              ]
+            },
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "uris": {
+              "command:inlineChat.start": {
+                "$mid": 1,
+                "path": "inlineChat.start",
+                "scheme": "command"
+              },
+              "https://docs.github.com/copilot/using-github-copilot/getting-started-with-github-copilot?tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted": {
+                "$mid": 1,
+                "path": "/copilot/using-github-copilot/getting-started-with-github-copilot",
+                "scheme": "https",
+                "authority": "docs.github.com",
+                "query": "tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted"
+              },
+              "https://code.visualstudio.com/docs/copilot/overview": {
+                "$mid": 1,
+                "path": "/docs/copilot/overview",
+                "scheme": "https",
+                "authority": "code.visualstudio.com"
+              },
+              "command:github.copilot.open.walkthrough": {
+                "$mid": 1,
+                "path": "github.copilot.open.walkthrough",
+                "scheme": "command"
+              }
+            }
+          },
+          "supportIssueReporting": false,
+          "requester": {
+            "name": "emperuna",
+            "icon": {
+              "$mid": 1,
+              "path": "/u/152013192",
+              "scheme": "https",
+              "authority": "avatars.githubusercontent.com",
+              "query": "v=4"
+            }
+          }
+        },
+        "name": "GitHubCopilot",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "ask"
+        ],
+        "slashCommands": [],
+        "disambiguation": [
+          {
+            "category": "generate_code_sample",
+            "description": "The user wants to generate code snippets without referencing the contents of the current workspace. This category does not include generating entire projects.",
+            "examples": [
+              "Write an example of computing a SHA256 hash."
+            ]
+          },
+          {
+            "category": "add_feature_to_file",
+            "description": "The user wants to change code in a file that is provided in their request, without referencing the contents of the current workspace. This category does not include generating entire projects.",
+            "examples": [
+              "Add a refresh button to the table widget."
+            ]
+          },
+          {
+            "category": "question_about_specific_files",
+            "description": "The user has a question about a specific file or code snippet that they have provided as part of their query, and the question does not require additional workspace context to answer.",
+            "examples": [
+              "What does this file do?"
+            ]
+          }
+        ]
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "d:\\repos\\haul-app\\lib\\screens\\buyer\\profile_screen.dart",
+            "_sep": 1,
+            "external": "file:///d%3A/repos/haul-app/lib/screens/buyer/profile_screen.dart",
+            "path": "/D:/repos/haul-app/lib/screens/buyer/profile_screen.dart",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/amangit1314/convo_chat/blob/c88b100a56881e8607904f35bb28c57c1e1071af/lib/features/profile/presentation/edit_profile_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/zinon-software/linkati-flutter/blob/34e21ec9f674ebbae6fb60b91b3312a078525f2d/lib/new_code/screens/home_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/spider-here/whc_admin/blob/625c1cf20fa08a0ab0f35ef9dbe44984003caeda/lib/screens/detailsScreens/desktopView/d_order_details_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/amangit1314/convo_chat/blob/c88b100a56881e8607904f35bb28c57c1e1071af/lib/features/profile/presentation/edit_profile_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot)"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/zinon-software/linkati-flutter/blob/34e21ec9f674ebbae6fb60b91b3312a078525f2d/lib/new_code/screens/home_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot)"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/spider-here/whc_admin/blob/625c1cf20fa08a0ab0f35ef9dbe44984003caeda/lib/screens/detailsScreens/desktopView/d_order_details_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot)"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/amangit1314/convo_chat/blob/c88b100a56881e8607904f35bb28c57c1e1071af/lib/features/profile/presentation/edit_profile_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connection"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/zinon-software/linkati-flutter/blob/34e21ec9f674ebbae6fb60b91b3312a078525f2d/lib/new_code/screens/home_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connection"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/kidrunner1/projectcovid/blob/2aa6115caa2e1782097b23e7836be5a146020b54/lib/screen/adminscreen/Appointment/get_history.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connection"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/spider-here/whc_admin/blob/625c1cf20fa08a0ab0f35ef9dbe44984003caeda/lib/screens/detailsScreens/desktopView/d_order_details_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connection"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/amangit1314/convo_chat/blob/c88b100a56881e8607904f35bb28c57c1e1071af/lib/features/profile/presentation/edit_profile_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/zinon-software/linkati-flutter/blob/34e21ec9f674ebbae6fb60b91b3312a078525f2d/lib/new_code/screens/home_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/kidrunner1/projectcovid/blob/2aa6115caa2e1782097b23e7836be5a146020b54/lib/screen/adminscreen/Appointment/get_history.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/spider-here/whc_admin/blob/625c1cf20fa08a0ab0f35ef9dbe44984003caeda/lib/screens/detailsScreens/desktopView/d_order_details_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/amangit1314/convo_chat/blob/c88b100a56881e8607904f35bb28c57c1e1071af/lib/features/profile/presentation/edit_profile_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/zinon-software/linkati-flutter/blob/34e21ec9f674ebbae6fb60b91b3312a078525f2d/lib/new_code/screens/home_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/kidrunner1/projectcovid/blob/2aa6115caa2e1782097b23e7836be5a146020b54/lib/screen/adminscreen/Appointment/get_history.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/spider-here/whc_admin/blob/625c1cf20fa08a0ab0f35ef9dbe44984003caeda/lib/screens/detailsScreens/desktopView/d_order_details_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/amangit1314/convo_chat/blob/c88b100a56881e8607904f35bb28c57c1e1071af/lib/features/profile/presentation/edit_profile_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/zinon-software/linkati-flutter/blob/34e21ec9f674ebbae6fb60b91b3312a078525f2d/lib/new_code/screens/home_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/kidrunner1/projectcovid/blob/2aa6115caa2e1782097b23e7836be5a146020b54/lib/screen/adminscreen/Appointment/get_history.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/spider-here/whc_admin/blob/625c1cf20fa08a0ab0f35ef9dbe44984003caeda/lib/screens/detailsScreens/desktopView/d_order_details_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/amangit1314/convo_chat/blob/c88b100a56881e8607904f35bb28c57c1e1071af/lib/features/profile/presentation/edit_profile_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/zinon-software/linkati-flutter/blob/34e21ec9f674ebbae6fb60b91b3312a078525f2d/lib/new_code/screens/home_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/kidrunner1/projectcovid/blob/2aa6115caa2e1782097b23e7836be5a146020b54/lib/screen/adminscreen/Appointment/get_history.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/spider-here/whc_admin/blob/625c1cf20fa08a0ab0f35ef9dbe44984003caeda/lib/screens/detailsScreens/desktopView/d_order_details_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/amangit1314/convo_chat/blob/c88b100a56881e8607904f35bb28c57c1e1071af/lib/features/profile/presentation/edit_profile_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/zinon-software/linkati-flutter/blob/34e21ec9f674ebbae6fb60b91b3312a078525f2d/lib/new_code/screens/home_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/kidrunner1/projectcovid/blob/2aa6115caa2e1782097b23e7836be5a146020b54/lib/screen/adminscreen/Appointment/get_history.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/spider-here/whc_admin/blob/625c1cf20fa08a0ab0f35ef9dbe44984003caeda/lib/screens/detailsScreens/desktopView/d_order_details_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/amangit1314/convo_chat/blob/c88b100a56881e8607904f35bb28c57c1e1071af/lib/features/profile/presentation/edit_profile_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/zinon-software/linkati-flutter/blob/34e21ec9f674ebbae6fb60b91b3312a078525f2d/lib/new_code/screens/home_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/kidrunner1/projectcovid/blob/2aa6115caa2e1782097b23e7836be5a146020b54/lib/screen/adminscreen/Appointment/get_history.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/spider-here/whc_admin/blob/625c1cf20fa08a0ab0f35ef9dbe44984003caeda/lib/screens/detailsScreens/desktopView/d_order_details_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/amangit1314/convo_chat/blob/c88b100a56881e8607904f35bb28c57c1e1071af/lib/features/profile/presentation/edit_profile_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/zinon-software/linkati-flutter/blob/34e21ec9f674ebbae6fb60b91b3312a078525f2d/lib/new_code/screens/home_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/kidrunner1/projectcovid/blob/2aa6115caa2e1782097b23e7836be5a146020b54/lib/screen/adminscreen/Appointment/get_history.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/spider-here/whc_admin/blob/625c1cf20fa08a0ab0f35ef9dbe44984003caeda/lib/screens/detailsScreens/desktopView/d_order_details_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/amangit1314/convo_chat/blob/c88b100a56881e8607904f35bb28c57c1e1071af/lib/features/profile/presentation/edit_profile_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));\n          }\n          \n          if (!"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/zinon-software/linkati-flutter/blob/34e21ec9f674ebbae6fb60b91b3312a078525f2d/lib/new_code/screens/home_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));\n          }\n          \n          if (!"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/kidrunner1/projectcovid/blob/2aa6115caa2e1782097b23e7836be5a146020b54/lib/screen/adminscreen/Appointment/get_history.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));\n          }\n          \n          if (!"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/spider-here/whc_admin/blob/625c1cf20fa08a0ab0f35ef9dbe44984003caeda/lib/screens/detailsScreens/desktopView/d_order_details_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));\n          }\n          \n          if (!"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/amangit1314/convo_chat/blob/c88b100a56881e8607904f35bb28c57c1e1071af/lib/features/profile/presentation/edit_profile_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));\n          }\n          \n          if (!snapshot.hasData ||"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/zinon-software/linkati-flutter/blob/34e21ec9f674ebbae6fb60b91b3312a078525f2d/lib/new_code/screens/home_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));\n          }\n          \n          if (!snapshot.hasData ||"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/kidrunner1/projectcovid/blob/2aa6115caa2e1782097b23e7836be5a146020b54/lib/screen/adminscreen/Appointment/get_history.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));\n          }\n          \n          if (!snapshot.hasData ||"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/spider-here/whc_admin/blob/625c1cf20fa08a0ab0f35ef9dbe44984003caeda/lib/screens/detailsScreens/desktopView/d_order_details_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));\n          }\n          \n          if (!snapshot.hasData ||"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/amangit1314/convo_chat/blob/c88b100a56881e8607904f35bb28c57c1e1071af/lib/features/profile/presentation/edit_profile_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));\n          }\n          \n          if (!snapshot.hasData || snapshot.data!.docs.isEmpty"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/zinon-software/linkati-flutter/blob/34e21ec9f674ebbae6fb60b91b3312a078525f2d/lib/new_code/screens/home_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));\n          }\n          \n          if (!snapshot.hasData || snapshot.data!.docs.isEmpty"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/kidrunner1/projectcovid/blob/2aa6115caa2e1782097b23e7836be5a146020b54/lib/screen/adminscreen/Appointment/get_history.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));\n          }\n          \n          if (!snapshot.hasData || snapshot.data!.docs.isEmpty"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/spider-here/whc_admin/blob/625c1cf20fa08a0ab0f35ef9dbe44984003caeda/lib/screens/detailsScreens/desktopView/d_order_details_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));\n          }\n          \n          if (!snapshot.hasData || snapshot.data!.docs.isEmpty"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/amangit1314/convo_chat/blob/c88b100a56881e8607904f35bb28c57c1e1071af/lib/features/profile/presentation/edit_profile_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));\n          }\n          \n          if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {\n            return Center("
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/zinon-software/linkati-flutter/blob/34e21ec9f674ebbae6fb60b91b3312a078525f2d/lib/new_code/screens/home_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));\n          }\n          \n          if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {\n            return Center("
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/kidrunner1/projectcovid/blob/2aa6115caa2e1782097b23e7836be5a146020b54/lib/screen/adminscreen/Appointment/get_history.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));\n          }\n          \n          if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {\n            return Center("
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/spider-here/whc_admin/blob/625c1cf20fa08a0ab0f35ef9dbe44984003caeda/lib/screens/detailsScreens/desktopView/d_order_details_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));\n          }\n          \n          if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {\n            return Center("
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/amangit1314/convo_chat/blob/c88b100a56881e8607904f35bb28c57c1e1071af/lib/features/profile/presentation/edit_profile_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));\n          }\n          \n          if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {\n            return Center(\n              child: Text("
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/zinon-software/linkati-flutter/blob/34e21ec9f674ebbae6fb60b91b3312a078525f2d/lib/new_code/screens/home_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));\n          }\n          \n          if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {\n            return Center(\n              child: Text("
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/kidrunner1/projectcovid/blob/2aa6115caa2e1782097b23e7836be5a146020b54/lib/screen/adminscreen/Appointment/get_history.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));\n          }\n          \n          if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {\n            return Center(\n              child: Text("
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/spider-here/whc_admin/blob/625c1cf20fa08a0ab0f35ef9dbe44984003caeda/lib/screens/detailsScreens/desktopView/d_order_details_screen.dart",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "')\n            .snapshots(),\n        builder: (context, snapshot) {\n          if (snapshot.connectionState == ConnectionState.waiting) {\n            return const Center(child: CircularProgressIndicator());\n          }\n          \n          if (snapshot.hasError) {\n            return Center(child: Text('Error: ${snapshot.error}'));\n          }\n          \n          if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {\n            return Center(\n              child: Text("
+        }
+      ],
+      "timestamp": 1746853266928
+    },
+    {
+      "requestId": "request_9e5e2abf-b3ba-4bf8-b0ae-d781a9b0cc88",
+      "message": {
+        "text": "How am I going to implement the option 3?",
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 41
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 42
+            },
+            "text": "How am I going to implement the option 3?",
+            "kind": "text"
+          }
+        ]
+      },
+      "variableData": {
+        "variables": [
+          {
+            "kind": "file",
+            "id": "vscode.implicit.viewport",
+            "name": "file:seller_registration_screen.dart",
+            "value": {
+              "uri": {
+                "$mid": 1,
+                "fsPath": "d:\\repos\\haul-app\\lib\\screens\\seller\\seller_registration_screen.dart",
+                "_sep": 1,
+                "external": "file:///d%3A/repos/haul-app/lib/screens/seller/seller_registration_screen.dart",
+                "path": "/d:/repos/haul-app/lib/screens/seller/seller_registration_screen.dart",
+                "scheme": "file"
+              },
+              "range": {
+                "startLineNumber": 415,
+                "startColumn": 1,
+                "endLineNumber": 450,
+                "endColumn": 2
+              }
+            },
+            "modelDescription": "User's current visible code"
+          }
+        ]
+      },
+      "response": [
+        {
+          "value": "# Implementing a Separate Web Admin Portal (Option 3)\n\nSince you already have the seller registration process in your Flutter app saving data to Firebase, here's how to implement a separate web admin portal:\n\n## Step 1: Create a New Web Project\n\n```bash\n# Create a directory for your admin portal\nmkdir d:\\repos\\haul-admin-portal\ncd d:\\repos\\haul-admin-portal\n\n# Initialize a new project (choose one approach)\n# Option A: Using React\nnpx create-react-app .\n\n# OR Option B: Using Vue\nnpm init vue@latest\n\n# OR Option C: Using simple HTML/JS\n# Just create an index.html file\n```\n\n## Step 2: Connect to Your Firebase Project\n\n```javascript\n// Firebase configuration (in your web project)\n// filepath: d:\\repos\\haul-admin-portal\\src\\firebase.js\n\nimport { initializeApp } from \"firebase/app\";\nimport { getFirestore } from \"firebase/firestore\";\nimport { getAuth } from \"firebase/auth\";\n\nconst firebaseConfig = {\n  apiKey: \"YOUR_API_KEY\",\n  authDomain: \"YOUR_PROJECT.firebaseapp.com\",\n  projectId: \"YOUR_PROJECT_ID\",\n  storageBucket: \"YOUR_PROJECT.appspot.com\",\n  messagingSenderId: \"YOUR_MESSAGING_SENDER_ID\",\n  appId: \"YOUR_APP_ID\"\n};\n\n// Initialize Firebase\nconst app = initializeApp(firebaseConfig);\nconst db = getFirestore(app);\nconst auth = getAuth(app);\n\nexport { db, auth };\n```\n\n## Step 3: Create Admin Authentication\n\n```javascript\n",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/d:/repos/haul-app/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "codeblockUri",
+          "uri": {
+            "$mid": 1,
+            "external": "file:///d%3A/repos/haul-admin-portal/src/components/Login.js",
+            "path": "/d:/repos/haul-admin-portal/src/components/Login.js",
+            "scheme": "file"
+          }
+        },
+        {
+          "value": "import { useState } from \"react\";\nimport { signInWithEmailAndPassword } from \"firebase/auth\";\nimport { doc, getDoc } from \"firebase/firestore\";\nimport { auth, db } from \"../firebase\";\n\nfunction Login({ setIsAuthenticated }) {\n  const [email, setEmail] = useState(\"\");\n  const [password, setPassword] = useState(\"\");\n  const [error, setError] = useState(null);\n\n  const handleSubmit = async (e) => {\n    e.preventDefault();\n    try {\n      // Sign in with Firebase Auth\n      const userCredential = await signInWithEmailAndPassword(auth, email, password);\n      const user = userCredential.user;\n      \n      // Check if user has admin role\n      const userDoc = await getDoc(doc(db, \"users\", user.uid));\n      const userData = userDoc.data();\n      \n      if (userData && userData.roles && userData.roles.includes(\"admin\")) {\n        setIsAuthenticated(true);\n      } else {\n        await auth.signOut();\n        setError(\"You don't have admin privileges\");\n      }\n    } catch (error) {\n      setError(error.message);\n    }\n  };\n\n  return (\n    <div className=\"login-container\">\n      <h2>Admin Dashboard Login</h2>\n      {error && <p className=\"error\">{error}</p>}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>\n        <button type=\"submit\">Login</button>\n      </form>\n    </div>\n  );\n}\n\nexport default Login;\n```\n\n## Step 4: Create Seller Request Management Dashboard\n\n```javascript\n",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/d:/repos/haul-app/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "codeblockUri",
+          "uri": {
+            "$mid": 1,
+            "external": "file:///d%3A/repos/haul-admin-portal/src/components/SellerRequests.js",
+            "path": "/d:/repos/haul-admin-portal/src/components/SellerRequests.js",
+            "scheme": "file"
+          }
+        },
+        {
+          "value": "import { useState, useEffect } from \"react\";\nimport { collection, query, where, getDocs, doc, updateDoc } from \"firebase/firestore\";\nimport { db } from \"../firebase\";\n\nfunction SellerRequests() {\n  const [requests, setRequests] = useState([]);\n  const [loading, setLoading] = useState(true);\n\n  useEffect(() => {\n    fetchRequests();\n  }, []);\n\n  const fetchRequests = async () => {\n    setLoading(true);\n    try {\n      const q = query(\n        collection(db, \"sellers\"), \n        where(\"status\", \"==\", \"pending\")\n      );\n      \n      const querySnapshot = await getDocs(q);\n      const requestsData = querySnapshot.docs.map(doc => ({\n        id: doc.id,\n        ...doc.data()\n      }));\n      \n      setRequests(requestsData);\n    } catch (error) {\n      console.error(\"Error fetching requests:\", error);\n    } finally {\n      setLoading(false);\n    }\n  };\n\n  const approveRequest = async (requestId, userId) => {\n    try {\n      // Update seller status\n      await updateDoc(doc(db, \"sellers\", userId), {\n        status: \"approved\",\n        approvedAt: new Date()\n      });\n      \n      // Update user roles\n      await updateDoc(doc(db, \"users\", userId), {\n        roles: [\"user\", \"seller\"],\n        sellerStatus: \"approved\"\n      });\n      \n      // Refresh requests list\n      fetchRequests();\n    } catch (error) {\n      console.error(\"Error approving request:\", error);\n    }\n  };\n\n  const rejectRequest = async (requestId, userId) => {\n    try {\n      await updateDoc(doc(db, \"sellers\", userId), {\n        status: \"rejected\",\n        rejectedAt: new Date()\n      });\n      \n      await updateDoc(doc(db, \"users\", userId), {\n        sellerStatus: \"rejected\"\n      });\n      \n      fetchRequests();\n    } catch (error) {\n      console.error(\"Error rejecting request:\", error);\n    }\n  };\n\n  if (loading) return <div>Loading...</div>;\n\n  return (\n    <div className=\"seller-requests\">\n      <h2>Pending Seller Requests</h2>\n      {requests.length === 0 ? (\n        <p>No pending requests</p>\n      ) : (\n        <div className=\"requests-list\">\n          {requests.map(request => (\n            <div key={request.id} className=\"request-card\">\n              <h3>{request.businessName}</h3>\n              <div className=\"user-details\">\n                <p><strong>User ID:</strong> {request.userId}</p>\n                <p><strong>Address:</strong> {request.addressLine1}, {request.city}</p>\n                <p><strong>Region:</strong> {request.region}</p>\n                <p><strong>Country:</strong> {request.country}</p>\n                <p><strong>Date Requested:</strong> {request.createdAt?.toDate().toLocaleDateString()}</p>\n              </div>\n              \n              <div className=\"request-actions\">\n                <button \n                  className=\"reject-btn\"\n                  onClick={() => rejectRequest(request.id, request.userId)}\n                >\n                  Reject\n                </button>\n                <button \n                  className=\"approve-btn\"\n                  onClick={() => approveRequest(request.id, request.userId)}\n                >\n                  Approve\n                </button>\n              </div>\n            </div>\n          ))}\n        </div>\n      )}\n    </div>\n  );\n}\n\nexport default SellerRequests;\n```\n\n## Step 5: Create Main App Component\n\n```javascript\n",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/d:/repos/haul-app/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "codeblockUri",
+          "uri": {
+            "$mid": 1,
+            "external": "file:///d%3A/repos/haul-admin-portal/src/App.js",
+            "path": "/d:/repos/haul-admin-portal/src/App.js",
+            "scheme": "file"
+          }
+        },
+        {
+          "value": "import { useState } from \"react\";\nimport Login from \"./components/Login\";\nimport SellerRequests from \"./components/SellerRequests\";\nimport \"./App.css\";\n\nfunction App() {\n  const [isAuthenticated, setIsAuthenticated] = useState(false);\n\n  return (\n    <div className=\"app\">\n      <header>\n        <h1>Haul Admin Portal</h1>\n        {isAuthenticated && (\n          <button \n            className=\"logout-btn\" \n            onClick={() => setIsAuthenticated(false)}\n          >\n            Logout\n          </button>\n        )}\n      </header>\n      \n      <main>\n        {isAuthenticated ? (\n          <SellerRequests />\n        ) : (\n          <Login setIsAuthenticated={setIsAuthenticated} />\n        )}\n      </main>\n    </div>\n  );\n}\n\nexport default App;\n```\n\n## Step 6: Add Basic Styling\n\n```css\n",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/d:/repos/haul-app/",
+            "scheme": "file"
+          }
+        },
+        {
+          "kind": "codeblockUri",
+          "uri": {
+            "$mid": 1,
+            "external": "file:///d%3A/repos/haul-admin-portal/src/App.css",
+            "path": "/d:/repos/haul-admin-portal/src/App.css",
+            "scheme": "file"
+          }
+        },
+        {
+          "value": "body {\n  font-family: 'Poppins', sans-serif;\n  margin: 0;\n  padding: 0;\n  background-color: #f5f5f5;\n}\n\n.app {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 20px;\n}\n\nheader {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 20px 0;\n  border-bottom: 1px solid #e0e0e0;\n}\n\n.login-container {\n  max-width: 400px;\n  margin: 100px auto;\n  padding: 30px;\n  border-radius: 8px;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n  background-color: white;\n}\n\n.requests-list {\n  margin-top: 30px;\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));\n  gap: 20px;\n}\n\n.request-card {\n  padding: 20px;\n  border-radius: 8px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n  background-color: white;\n}\n\n.request-actions {\n  display: flex;\n  justify-content: space-between;\n  margin-top: 20px;\n}\n\nbutton {\n  padding: 10px 20px;\n  border-radius: 4px;\n  border: none;\n  cursor: pointer;\n  font-weight: 600;\n}\n\n.approve-btn {\n  background-color: #4CAF50;\n  color: white;\n}\n\n.reject-btn {\n  background-color: white;\n  border: 1px solid #f44336;\n  color: #f44336;\n}\n\n.logout-btn {\n  background-color: transparent;\n  border: 1px solid #333;\n  color: #333;\n}\n\n.error {\n  color: #f44336;\n}\n```\n\n## Step 7: Deploy Your Admin Portal\n\nYou can deploy this to Firebase Hosting:\n\n```bash\n# Install Firebase CLI if you haven't already\nnpm install -g firebase-tools\n\n# Login to Firebase\nfirebase login\n\n# Initialize Firebase in your project\nfirebase init\n\n# Build your project (if using React/Vue)\nnpm run build\n\n# Deploy to Firebase Hosting\nfirebase deploy\n```\n\n## Step 8: Set Up Firebase Security Rules\n\nMake sure to secure your Firestore database:\n\n```javascript\n// Firebase security rules\nrules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    // Function to check if user is an admin\n    function isAdmin() {\n      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.roles.hasAny(['admin']);\n    }\n    \n    // Users collection\n    match /users/{userId} {\n      allow read: if request.auth.uid == userId || isAdmin();\n      allow write: if request.auth.uid == userId || isAdmin();\n    }\n    \n    // Sellers collection\n    match /sellers/{sellerId} {\n      allow read: if request.auth.uid == sellerId || isAdmin();\n      allow create: if request.auth.uid == sellerId;\n      // Only admins can update status\n      allow update: if isAdmin() || \n                    (request.auth.uid == sellerId && \n                     !request.resource.data.diff(resource.data).affectedKeys().hasAny(['status']));\n    }\n  }\n}\n```\n\nThis approach gives you a completely separate admin portal that can be accessed by admin users, with proper security controls to ensure only authorized users can approve/reject seller requests.",
+          "supportThemeIcons": false,
+          "supportHtml": false,
+          "baseUri": {
+            "$mid": 1,
+            "path": "/d:/repos/haul-app/",
+            "scheme": "file"
+          }
+        }
+      ],
+      "responseId": "response_e4271d81-2083-4f2b-aa34-e96015e3d2e1",
+      "result": {
+        "timings": {
+          "firstProgress": 11671,
+          "totalElapsed": 73542
+        },
+        "metadata": {
+          "codeBlocks": [
+            {
+              "code": "# Create a directory for your admin portal\nmkdir d:\\repos\\haul-admin-portal\ncd d:\\repos\\haul-admin-portal\n\n# Initialize a new project (choose one approach)\n# Option A: Using React\nnpx create-react-app .\n\n# OR Option B: Using Vue\nnpm init vue@latest\n\n# OR Option C: Using simple HTML/JS\n# Just create an index.html file\n",
+              "language": "bash",
+              "markdownBeforeBlock": "# Implementing a Separate Web Admin Portal (Option 3)\n\nSince you already have the seller registration process in your Flutter app saving data to Firebase, here's how to implement a separate web admin portal:\n\n## Step 1: Create a New Web Project\n\n"
+            },
+            {
+              "code": "// Firebase configuration (in your web project)\n// filepath: d:\\repos\\haul-admin-portal\\src\\firebase.js\n\nimport { initializeApp } from \"firebase/app\";\nimport { getFirestore } from \"firebase/firestore\";\nimport { getAuth } from \"firebase/auth\";\n\nconst firebaseConfig = {\n  apiKey: \"YOUR_API_KEY\",\n  authDomain: \"YOUR_PROJECT.firebaseapp.com\",\n  projectId: \"YOUR_PROJECT_ID\",\n  storageBucket: \"YOUR_PROJECT.appspot.com\",\n  messagingSenderId: \"YOUR_MESSAGING_SENDER_ID\",\n  appId: \"YOUR_APP_ID\"\n};\n\n// Initialize Firebase\nconst app = initializeApp(firebaseConfig);\nconst db = getFirestore(app);\nconst auth = getAuth(app);\n\nexport { db, auth };\n",
+              "language": "javascript",
+              "markdownBeforeBlock": "\n## Step 2: Connect to Your Firebase Project\n\n"
+            },
+            {
+              "code": "import { useState } from \"react\";\nimport { signInWithEmailAndPassword } from \"firebase/auth\";\nimport { doc, getDoc } from \"firebase/firestore\";\nimport { auth, db } from \"../firebase\";\n\nfunction Login({ setIsAuthenticated }) {\n  const [email, setEmail] = useState(\"\");\n  const [password, setPassword] = useState(\"\");\n  const [error, setError] = useState(null);\n\n  const handleSubmit = async (e) => {\n    e.preventDefault();\n    try {\n      // Sign in with Firebase Auth\n      const userCredential = await signInWithEmailAndPassword(auth, email, password);\n      const user = userCredential.user;\n      \n      // Check if user has admin role\n      const userDoc = await getDoc(doc(db, \"users\", user.uid));\n      const userData = userDoc.data();\n      \n      if (userData && userData.roles && userData.roles.includes(\"admin\")) {\n        setIsAuthenticated(true);\n      } else {\n        await auth.signOut();\n        setError(\"You don't have admin privileges\");\n      }\n    } catch (error) {\n      setError(error.message);\n    }\n  };\n\n  return (\n    <div className=\"login-container\">\n      <h2>Admin Dashboard Login</h2>\n      {error && <p className=\"error\">{error}</p>}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>\n        <button type=\"submit\">Login</button>\n      </form>\n    </div>\n  );\n}\n\nexport default Login;\n",
+              "resource": {
+                "$mid": 1,
+                "path": "/d:/repos/haul-admin-portal/src/components/Login.js",
+                "scheme": "file"
+              },
+              "language": "javascript",
+              "markdownBeforeBlock": "\n## Step 3: Create Admin Authentication\n\n"
+            },
+            {
+              "code": "import { useState, useEffect } from \"react\";\nimport { collection, query, where, getDocs, doc, updateDoc } from \"firebase/firestore\";\nimport { db } from \"../firebase\";\n\nfunction SellerRequests() {\n  const [requests, setRequests] = useState([]);\n  const [loading, setLoading] = useState(true);\n\n  useEffect(() => {\n    fetchRequests();\n  }, []);\n\n  const fetchRequests = async () => {\n    setLoading(true);\n    try {\n      const q = query(\n        collection(db, \"sellers\"), \n        where(\"status\", \"==\", \"pending\")\n      );\n      \n      const querySnapshot = await getDocs(q);\n      const requestsData = querySnapshot.docs.map(doc => ({\n        id: doc.id,\n        ...doc.data()\n      }));\n      \n      setRequests(requestsData);\n    } catch (error) {\n      console.error(\"Error fetching requests:\", error);\n    } finally {\n      setLoading(false);\n    }\n  };\n\n  const approveRequest = async (requestId, userId) => {\n    try {\n      // Update seller status\n      await updateDoc(doc(db, \"sellers\", userId), {\n        status: \"approved\",\n        approvedAt: new Date()\n      });\n      \n      // Update user roles\n      await updateDoc(doc(db, \"users\", userId), {\n        roles: [\"user\", \"seller\"],\n        sellerStatus: \"approved\"\n      });\n      \n      // Refresh requests list\n      fetchRequests();\n    } catch (error) {\n      console.error(\"Error approving request:\", error);\n    }\n  };\n\n  const rejectRequest = async (requestId, userId) => {\n    try {\n      await updateDoc(doc(db, \"sellers\", userId), {\n        status: \"rejected\",\n        rejectedAt: new Date()\n      });\n      \n      await updateDoc(doc(db, \"users\", userId), {\n        sellerStatus: \"rejected\"\n      });\n      \n      fetchRequests();\n    } catch (error) {\n      console.error(\"Error rejecting request:\", error);\n    }\n  };\n\n  if (loading) return <div>Loading...</div>;\n\n  return (\n    <div className=\"seller-requests\">\n      <h2>Pending Seller Requests</h2>\n      {requests.length === 0 ? (\n        <p>No pending requests</p>\n      ) : (\n        <div className=\"requests-list\">\n          {requests.map(request => (\n            <div key={request.id} className=\"request-card\">\n              <h3>{request.businessName}</h3>\n              <div className=\"user-details\">\n                <p><strong>User ID:</strong> {request.userId}</p>\n                <p><strong>Address:</strong> {request.addressLine1}, {request.city}</p>\n                <p><strong>Region:</strong> {request.region}</p>\n                <p><strong>Country:</strong> {request.country}</p>\n                <p><strong>Date Requested:</strong> {request.createdAt?.toDate().toLocaleDateString()}</p>\n              </div>\n              \n              <div className=\"request-actions\">\n                <button \n                  className=\"reject-btn\"\n                  onClick={() => rejectRequest(request.id, request.userId)}\n                >\n                  Reject\n                </button>\n                <button \n                  className=\"approve-btn\"\n                  onClick={() => approveRequest(request.id, request.userId)}\n                >\n                  Approve\n                </button>\n              </div>\n            </div>\n          ))}\n        </div>\n      )}\n    </div>\n  );\n}\n\nexport default SellerRequests;\n",
+              "resource": {
+                "$mid": 1,
+                "path": "/d:/repos/haul-admin-portal/src/components/SellerRequests.js",
+                "scheme": "file"
+              },
+              "language": "javascript",
+              "markdownBeforeBlock": "\n## Step 4: Create Seller Request Management Dashboard\n\n"
+            },
+            {
+              "code": "import { useState } from \"react\";\nimport Login from \"./components/Login\";\nimport SellerRequests from \"./components/SellerRequests\";\nimport \"./App.css\";\n\nfunction App() {\n  const [isAuthenticated, setIsAuthenticated] = useState(false);\n\n  return (\n    <div className=\"app\">\n      <header>\n        <h1>Haul Admin Portal</h1>\n        {isAuthenticated && (\n          <button \n            className=\"logout-btn\" \n            onClick={() => setIsAuthenticated(false)}\n          >\n            Logout\n          </button>\n        )}\n      </header>\n      \n      <main>\n        {isAuthenticated ? (\n          <SellerRequests />\n        ) : (\n          <Login setIsAuthenticated={setIsAuthenticated} />\n        )}\n      </main>\n    </div>\n  );\n}\n\nexport default App;\n",
+              "resource": {
+                "$mid": 1,
+                "path": "/d:/repos/haul-admin-portal/src/App.js",
+                "scheme": "file"
+              },
+              "language": "javascript",
+              "markdownBeforeBlock": "\n## Step 5: Create Main App Component\n\n"
+            },
+            {
+              "code": "body {\n  font-family: 'Poppins', sans-serif;\n  margin: 0;\n  padding: 0;\n  background-color: #f5f5f5;\n}\n\n.app {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 20px;\n}\n\nheader {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 20px 0;\n  border-bottom: 1px solid #e0e0e0;\n}\n\n.login-container {\n  max-width: 400px;\n  margin: 100px auto;\n  padding: 30px;\n  border-radius: 8px;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n  background-color: white;\n}\n\n.requests-list {\n  margin-top: 30px;\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));\n  gap: 20px;\n}\n\n.request-card {\n  padding: 20px;\n  border-radius: 8px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);\n  background-color: white;\n}\n\n.request-actions {\n  display: flex;\n  justify-content: space-between;\n  margin-top: 20px;\n}\n\nbutton {\n  padding: 10px 20px;\n  border-radius: 4px;\n  border: none;\n  cursor: pointer;\n  font-weight: 600;\n}\n\n.approve-btn {\n  background-color: #4CAF50;\n  color: white;\n}\n\n.reject-btn {\n  background-color: white;\n  border: 1px solid #f44336;\n  color: #f44336;\n}\n\n.logout-btn {\n  background-color: transparent;\n  border: 1px solid #333;\n  color: #333;\n}\n\n.error {\n  color: #f44336;\n}\n",
+              "resource": {
+                "$mid": 1,
+                "path": "/d:/repos/haul-admin-portal/src/App.css",
+                "scheme": "file"
+              },
+              "language": "css",
+              "markdownBeforeBlock": "\n## Step 6: Add Basic Styling\n\n"
+            },
+            {
+              "code": "# Install Firebase CLI if you haven't already\nnpm install -g firebase-tools\n\n# Login to Firebase\nfirebase login\n\n# Initialize Firebase in your project\nfirebase init\n\n# Build your project (if using React/Vue)\nnpm run build\n\n# Deploy to Firebase Hosting\nfirebase deploy\n",
+              "language": "bash",
+              "markdownBeforeBlock": "\n## Step 7: Deploy Your Admin Portal\n\nYou can deploy this to Firebase Hosting:\n\n"
+            },
+            {
+              "code": "// Firebase security rules\nrules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    // Function to check if user is an admin\n    function isAdmin() {\n      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.roles.hasAny(['admin']);\n    }\n    \n    // Users collection\n    match /users/{userId} {\n      allow read: if request.auth.uid == userId || isAdmin();\n      allow write: if request.auth.uid == userId || isAdmin();\n    }\n    \n    // Sellers collection\n    match /sellers/{sellerId} {\n      allow read: if request.auth.uid == sellerId || isAdmin();\n      allow create: if request.auth.uid == sellerId;\n      // Only admins can update status\n      allow update: if isAdmin() || \n                    (request.auth.uid == sellerId && \n                     !request.resource.data.diff(resource.data).affectedKeys().hasAny(['status']));\n    }\n  }\n}\n",
+              "language": "javascript",
+              "markdownBeforeBlock": "\n## Step 8: Set Up Firebase Security Rules\n\nMake sure to secure your Firestore database:\n\n"
+            }
+          ],
+          "modelMessageId": "3321ca84-21d1-4ded-93bc-f0637a465492",
+          "responseId": "7a130d5a-00eb-48bb-b8b2-e5e4eb97830b",
+          "sessionId": "545136a8-d641-42a6-aab7-d6a3a5702fba",
+          "agentId": "github.copilot.default"
+        }
+      },
+      "followups": [],
+      "isCanceled": false,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.default",
+        "description": "Ask Copilot",
+        "metadata": {
+          "themeIcon": {
+            "id": "copilot"
+          },
+          "hasFollowups": true,
+          "helpTextPrefix": "You can ask me general programming questions, or chat with the following participants which have specialized expertise and can perform actions:",
+          "helpTextVariablesPrefix": "You can also help me understand your question by using the following variables to give me extra context:",
+          "helpTextPostfix": {
+            "value": "To have a great conversation, ask me questions as if I was a real programmer:\n\n* **Show me the code** you want to talk about by having the files open and selecting the most important lines.\n* **Make refinements** by asking me follow-up questions, adding clarifications, providing errors, etc.\n* **Review my suggested code** and tell me about issues or improvements, so I can iterate on it.\n\nYou can also ask me questions about your editor selection by [starting an inline chat session](command:inlineChat.start).\n\nLearn more about [GitHub Copilot](https://docs.github.com/copilot/using-github-copilot/getting-started-with-github-copilot?tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted) in [Visual Studio Code](https://code.visualstudio.com/docs/copilot/overview). Or explore the [Copilot walkthrough](command:github.copilot.open.walkthrough).",
+            "isTrusted": {
+              "enabledCommands": [
+                "inlineChat.start",
+                "github.copilot.open.walkthrough"
+              ]
+            },
+            "supportThemeIcons": false,
+            "supportHtml": false,
+            "uris": {
+              "command:inlineChat.start": {
+                "$mid": 1,
+                "path": "inlineChat.start",
+                "scheme": "command"
+              },
+              "https://docs.github.com/copilot/using-github-copilot/getting-started-with-github-copilot?tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted": {
+                "$mid": 1,
+                "path": "/copilot/using-github-copilot/getting-started-with-github-copilot",
+                "scheme": "https",
+                "authority": "docs.github.com",
+                "query": "tool=vscode&utm_source=editor&utm_medium=chat-panel&utm_campaign=2024q3-em-MSFT-getstarted"
+              },
+              "https://code.visualstudio.com/docs/copilot/overview": {
+                "$mid": 1,
+                "path": "/docs/copilot/overview",
+                "scheme": "https",
+                "authority": "code.visualstudio.com"
+              },
+              "command:github.copilot.open.walkthrough": {
+                "$mid": 1,
+                "path": "github.copilot.open.walkthrough",
+                "scheme": "command"
+              }
+            }
+          },
+          "supportIssueReporting": false,
+          "requester": {
+            "name": "emperuna",
+            "icon": {
+              "$mid": 1,
+              "path": "/u/152013192",
+              "scheme": "https",
+              "authority": "avatars.githubusercontent.com",
+              "query": "v=4"
+            }
+          }
+        },
+        "name": "GitHubCopilot",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "panel"
+        ],
+        "modes": [
+          "ask"
+        ],
+        "slashCommands": [],
+        "disambiguation": [
+          {
+            "category": "generate_code_sample",
+            "description": "The user wants to generate code snippets without referencing the contents of the current workspace. This category does not include generating entire projects.",
+            "examples": [
+              "Write an example of computing a SHA256 hash."
+            ]
+          },
+          {
+            "category": "add_feature_to_file",
+            "description": "The user wants to change code in a file that is provided in their request, without referencing the contents of the current workspace. This category does not include generating entire projects.",
+            "examples": [
+              "Add a refresh button to the table widget."
+            ]
+          },
+          {
+            "category": "question_about_specific_files",
+            "description": "The user has a question about a specific file or code snippet that they have provided as part of their query, and the question does not require additional workspace context to answer.",
+            "examples": [
+              "What does this file do?"
+            ]
+          }
+        ]
+      },
+      "contentReferences": [
+        {
+          "kind": "reference",
+          "reference": {
+            "$mid": 1,
+            "fsPath": "d:\\repos\\haul-app\\lib\\screens\\seller\\seller_registration_screen.dart",
+            "_sep": 1,
+            "external": "file:///d%3A/repos/haul-app/lib/screens/seller/seller_registration_screen.dart",
+            "path": "/d:/repos/haul-app/lib/screens/seller/seller_registration_screen.dart",
+            "scheme": "file"
+          }
+        }
+      ],
+      "codeCitations": [
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/shehriyarnadeem/globalprototypeclient/blob/85cc3aef784fe3dcdf1e0f6527bdab72e6a3496e/.history/src/screens/Login/Login_20200830185651.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": ") {"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/shehriyarnadeem/globalprototypeclient/blob/85cc3aef784fe3dcdf1e0f6527bdab72e6a3496e/.history/src/screens/Login/Login_20200830185651.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": ") {\n  const [email, setEmail]"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/shehriyarnadeem/globalprototypeclient/blob/85cc3aef784fe3dcdf1e0f6527bdab72e6a3496e/.history/src/screens/Login/Login_20200830185651.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": ") {\n  const [email, setEmail] = useState(\"\");\n  const [password, setPassword]"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/shehriyarnadeem/globalprototypeclient/blob/85cc3aef784fe3dcdf1e0f6527bdab72e6a3496e/.history/src/screens/Login/Login_20200830185651.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": ") {\n  const [email, setEmail] = useState(\"\");\n  const [password, setPassword] = useState(\"\");\n  const [error, setError]"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/shehriyarnadeem/globalprototypeclient/blob/85cc3aef784fe3dcdf1e0f6527bdab72e6a3496e/.history/src/screens/Login/Login_20200830185651.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": ") {\n  const [email, setEmail] = useState(\"\");\n  const [password, setPassword] = useState(\"\");\n  const [error, setError] = useState(null);\n\n  const handleSubmit"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/shehriyarnadeem/globalprototypeclient/blob/85cc3aef784fe3dcdf1e0f6527bdab72e6a3496e/.history/src/screens/Login/Login_20200830185651.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": ") {\n  const [email, setEmail] = useState(\"\");\n  const [password, setPassword] = useState(\"\");\n  const [error, setError] = useState(null);\n\n  const handleSubmit = async (e) => {\n    e.preventDefault"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/shehriyarnadeem/globalprototypeclient/blob/85cc3aef784fe3dcdf1e0f6527bdab72e6a3496e/.history/src/screens/Login/Login_20200830185651.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": ") {\n  const [email, setEmail] = useState(\"\");\n  const [password, setPassword] = useState(\"\");\n  const [error, setError] = useState(null);\n\n  const handleSubmit = async (e) => {\n    e.preventDefault()"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Jesus-Elizalde/exotals/blob/a6941f39c083a5df8e40191ce7cc493c897b8aa3/frontend/src/components/SignupFormPage/index.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubm"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/muradkhannovruzov/my-lms/blob/aed40b62b601ab7ca85c287ef37c14466fa7011e/src/main/frontend/src/components/Login/Login.jsx",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubm"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/tachung2/Hackathon/blob/fec2a374053f7c76a34c799c5c3b3bfd89ab16b5/src/main/frontend/src/Signup.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubm"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Jesus-Elizalde/exotals/blob/a6941f39c083a5df8e40191ce7cc493c897b8aa3/frontend/src/components/SignupFormPage/index.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/muradkhannovruzov/my-lms/blob/aed40b62b601ab7ca85c287ef37c14466fa7011e/src/main/frontend/src/components/Login/Login.jsx",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/tachung2/Hackathon/blob/fec2a374053f7c76a34c799c5c3b3bfd89ab16b5/src/main/frontend/src/Signup.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Jesus-Elizalde/exotals/blob/a6941f39c083a5df8e40191ce7cc493c897b8aa3/frontend/src/components/SignupFormPage/index.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/muradkhannovruzov/my-lms/blob/aed40b62b601ab7ca85c287ef37c14466fa7011e/src/main/frontend/src/components/Login/Login.jsx",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/tachung2/Hackathon/blob/fec2a374053f7c76a34c799c5c3b3bfd89ab16b5/src/main/frontend/src/Signup.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Jesus-Elizalde/exotals/blob/a6941f39c083a5df8e40191ce7cc493c897b8aa3/frontend/src/components/SignupFormPage/index.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/muradkhannovruzov/my-lms/blob/aed40b62b601ab7ca85c287ef37c14466fa7011e/src/main/frontend/src/components/Login/Login.jsx",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/tachung2/Hackathon/blob/fec2a374053f7c76a34c799c5c3b3bfd89ab16b5/src/main/frontend/src/Signup.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/RobertVogue/SnowJaws/blob/c6e69dca5ebed8600f1a092e4c318fecd2ee5f5e/frontend/src/components/LoginFormModal/LoginForm.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Jesus-Elizalde/exotals/blob/a6941f39c083a5df8e40191ce7cc493c897b8aa3/frontend/src/components/SignupFormPage/index.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/muradkhannovruzov/my-lms/blob/aed40b62b601ab7ca85c287ef37c14466fa7011e/src/main/frontend/src/components/Login/Login.jsx",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/tachung2/Hackathon/blob/fec2a374053f7c76a34c799c5c3b3bfd89ab16b5/src/main/frontend/src/Signup.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/RobertVogue/SnowJaws/blob/c6e69dca5ebed8600f1a092e4c318fecd2ee5f5e/frontend/src/components/LoginFormModal/LoginForm.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/wylin94/AAw16d1-flickr-clone/blob/f1623594bc8cf5382963b0b582167dbb06242703/frontend/src/components/LoginFormPage/LoginFormPage.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Jesus-Elizalde/exotals/blob/a6941f39c083a5df8e40191ce7cc493c897b8aa3/frontend/src/components/SignupFormPage/index.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/muradkhannovruzov/my-lms/blob/aed40b62b601ab7ca85c287ef37c14466fa7011e/src/main/frontend/src/components/Login/Login.jsx",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/tachung2/Hackathon/blob/fec2a374053f7c76a34c799c5c3b3bfd89ab16b5/src/main/frontend/src/Signup.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/RobertVogue/SnowJaws/blob/c6e69dca5ebed8600f1a092e4c318fecd2ee5f5e/frontend/src/components/LoginFormModal/LoginForm.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            require"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/wylin94/AAw16d1-flickr-clone/blob/f1623594bc8cf5382963b0b582167dbb06242703/frontend/src/components/LoginFormPage/LoginFormPage.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            require"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Jesus-Elizalde/exotals/blob/a6941f39c083a5df8e40191ce7cc493c897b8aa3/frontend/src/components/SignupFormPage/index.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            require"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/muradkhannovruzov/my-lms/blob/aed40b62b601ab7ca85c287ef37c14466fa7011e/src/main/frontend/src/components/Login/Login.jsx",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            require"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/tachung2/Hackathon/blob/fec2a374053f7c76a34c799c5c3b3bfd89ab16b5/src/main/frontend/src/Signup.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            require"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/RobertVogue/SnowJaws/blob/c6e69dca5ebed8600f1a092e4c318fecd2ee5f5e/frontend/src/components/LoginFormModal/LoginForm.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/wylin94/AAw16d1-flickr-clone/blob/f1623594bc8cf5382963b0b582167dbb06242703/frontend/src/components/LoginFormPage/LoginFormPage.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Jesus-Elizalde/exotals/blob/a6941f39c083a5df8e40191ce7cc493c897b8aa3/frontend/src/components/SignupFormPage/index.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/muradkhannovruzov/my-lms/blob/aed40b62b601ab7ca85c287ef37c14466fa7011e/src/main/frontend/src/components/Login/Login.jsx",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/yachika03/bookstore/blob/ae90a44c2d4578891b277a0b02c973cb7ee0aa6d/frontend/src/components/Login.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/tachung2/Hackathon/blob/fec2a374053f7c76a34c799c5c3b3bfd89ab16b5/src/main/frontend/src/Signup.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/RobertVogue/SnowJaws/blob/c6e69dca5ebed8600f1a092e4c318fecd2ee5f5e/frontend/src/components/LoginFormModal/LoginForm.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/wylin94/AAw16d1-flickr-clone/blob/f1623594bc8cf5382963b0b582167dbb06242703/frontend/src/components/LoginFormPage/LoginFormPage.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Jesus-Elizalde/exotals/blob/a6941f39c083a5df8e40191ce7cc493c897b8aa3/frontend/src/components/SignupFormPage/index.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/muradkhannovruzov/my-lms/blob/aed40b62b601ab7ca85c287ef37c14466fa7011e/src/main/frontend/src/components/Login/Login.jsx",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/yachika03/bookstore/blob/ae90a44c2d4578891b277a0b02c973cb7ee0aa6d/frontend/src/components/Login.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Bouabidzine/project-Tender-Step2/blob/ec36d9e794d6e964ba94303080ebd239b57d56c9/src/Suppliers/SupplierLogin.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/tachung2/Hackathon/blob/fec2a374053f7c76a34c799c5c3b3bfd89ab16b5/src/main/frontend/src/Signup.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/RobertVogue/SnowJaws/blob/c6e69dca5ebed8600f1a092e4c318fecd2ee5f5e/frontend/src/components/LoginFormModal/LoginForm.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/wylin94/AAw16d1-flickr-clone/blob/f1623594bc8cf5382963b0b582167dbb06242703/frontend/src/components/LoginFormPage/LoginFormPage.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Jesus-Elizalde/exotals/blob/a6941f39c083a5df8e40191ce7cc493c897b8aa3/frontend/src/components/SignupFormPage/index.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/muradkhannovruzov/my-lms/blob/aed40b62b601ab7ca85c287ef37c14466fa7011e/src/main/frontend/src/components/Login/Login.jsx",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/yachika03/bookstore/blob/ae90a44c2d4578891b277a0b02c973cb7ee0aa6d/frontend/src/components/Login.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Bouabidzine/project-Tender-Step2/blob/ec36d9e794d6e964ba94303080ebd239b57d56c9/src/Suppliers/SupplierLogin.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/tachung2/Hackathon/blob/fec2a374053f7c76a34c799c5c3b3bfd89ab16b5/src/main/frontend/src/Signup.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/RobertVogue/SnowJaws/blob/c6e69dca5ebed8600f1a092e4c318fecd2ee5f5e/frontend/src/components/LoginFormModal/LoginForm.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"passwor"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/wylin94/AAw16d1-flickr-clone/blob/f1623594bc8cf5382963b0b582167dbb06242703/frontend/src/components/LoginFormPage/LoginFormPage.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"passwor"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Jesus-Elizalde/exotals/blob/a6941f39c083a5df8e40191ce7cc493c897b8aa3/frontend/src/components/SignupFormPage/index.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"passwor"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/muradkhannovruzov/my-lms/blob/aed40b62b601ab7ca85c287ef37c14466fa7011e/src/main/frontend/src/components/Login/Login.jsx",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"passwor"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/yachika03/bookstore/blob/ae90a44c2d4578891b277a0b02c973cb7ee0aa6d/frontend/src/components/Login.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"passwor"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Bouabidzine/project-Tender-Step2/blob/ec36d9e794d6e964ba94303080ebd239b57d56c9/src/Suppliers/SupplierLogin.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"passwor"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/tachung2/Hackathon/blob/fec2a374053f7c76a34c799c5c3b3bfd89ab16b5/src/main/frontend/src/Signup.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"passwor"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/RobertVogue/SnowJaws/blob/c6e69dca5ebed8600f1a092e4c318fecd2ee5f5e/frontend/src/components/LoginFormModal/LoginForm.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/wylin94/AAw16d1-flickr-clone/blob/f1623594bc8cf5382963b0b582167dbb06242703/frontend/src/components/LoginFormPage/LoginFormPage.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Jesus-Elizalde/exotals/blob/a6941f39c083a5df8e40191ce7cc493c897b8aa3/frontend/src/components/SignupFormPage/index.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/muradkhannovruzov/my-lms/blob/aed40b62b601ab7ca85c287ef37c14466fa7011e/src/main/frontend/src/components/Login/Login.jsx",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/yachika03/bookstore/blob/ae90a44c2d4578891b277a0b02c973cb7ee0aa6d/frontend/src/components/Login.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Bouabidzine/project-Tender-Step2/blob/ec36d9e794d6e964ba94303080ebd239b57d56c9/src/Suppliers/SupplierLogin.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/tachung2/Hackathon/blob/fec2a374053f7c76a34c799c5c3b3bfd89ab16b5/src/main/frontend/src/Signup.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/RobertVogue/SnowJaws/blob/c6e69dca5ebed8600f1a092e4c318fecd2ee5f5e/frontend/src/components/LoginFormModal/LoginForm.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/wylin94/AAw16d1-flickr-clone/blob/f1623594bc8cf5382963b0b582167dbb06242703/frontend/src/components/LoginFormPage/LoginFormPage.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Jesus-Elizalde/exotals/blob/a6941f39c083a5df8e40191ce7cc493c897b8aa3/frontend/src/components/SignupFormPage/index.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/muradkhannovruzov/my-lms/blob/aed40b62b601ab7ca85c287ef37c14466fa7011e/src/main/frontend/src/components/Login/Login.jsx",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/yachika03/bookstore/blob/ae90a44c2d4578891b277a0b02c973cb7ee0aa6d/frontend/src/components/Login.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Bouabidzine/project-Tender-Step2/blob/ec36d9e794d6e964ba94303080ebd239b57d56c9/src/Suppliers/SupplierLogin.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/tachung2/Hackathon/blob/fec2a374053f7c76a34c799c5c3b3bfd89ab16b5/src/main/frontend/src/Signup.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/RobertVogue/SnowJaws/blob/c6e69dca5ebed8600f1a092e4c318fecd2ee5f5e/frontend/src/components/LoginFormModal/LoginForm.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/wylin94/AAw16d1-flickr-clone/blob/f1623594bc8cf5382963b0b582167dbb06242703/frontend/src/components/LoginFormPage/LoginFormPage.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Jesus-Elizalde/exotals/blob/a6941f39c083a5df8e40191ce7cc493c897b8aa3/frontend/src/components/SignupFormPage/index.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/muradkhannovruzov/my-lms/blob/aed40b62b601ab7ca85c287ef37c14466fa7011e/src/main/frontend/src/components/Login/Login.jsx",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/yachika03/bookstore/blob/ae90a44c2d4578891b277a0b02c973cb7ee0aa6d/frontend/src/components/Login.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Bouabidzine/project-Tender-Step2/blob/ec36d9e794d6e964ba94303080ebd239b57d56c9/src/Suppliers/SupplierLogin.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/tachung2/Hackathon/blob/fec2a374053f7c76a34c799c5c3b3bfd89ab16b5/src/main/frontend/src/Signup.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/RobertVogue/SnowJaws/blob/c6e69dca5ebed8600f1a092e4c318fecd2ee5f5e/frontend/src/components/LoginFormModal/LoginForm.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/wylin94/AAw16d1-flickr-clone/blob/f1623594bc8cf5382963b0b582167dbb06242703/frontend/src/components/LoginFormPage/LoginFormPage.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Jesus-Elizalde/exotals/blob/a6941f39c083a5df8e40191ce7cc493c897b8aa3/frontend/src/components/SignupFormPage/index.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/muradkhannovruzov/my-lms/blob/aed40b62b601ab7ca85c287ef37c14466fa7011e/src/main/frontend/src/components/Login/Login.jsx",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/yachika03/bookstore/blob/ae90a44c2d4578891b277a0b02c973cb7ee0aa6d/frontend/src/components/Login.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Bouabidzine/project-Tender-Step2/blob/ec36d9e794d6e964ba94303080ebd239b57d56c9/src/Suppliers/SupplierLogin.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/tachung2/Hackathon/blob/fec2a374053f7c76a34c799c5c3b3bfd89ab16b5/src/main/frontend/src/Signup.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/RobertVogue/SnowJaws/blob/c6e69dca5ebed8600f1a092e4c318fecd2ee5f5e/frontend/src/components/LoginFormModal/LoginForm.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>\n        <button type=\"submit\">Login</button>"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/wylin94/AAw16d1-flickr-clone/blob/f1623594bc8cf5382963b0b582167dbb06242703/frontend/src/components/LoginFormPage/LoginFormPage.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>\n        <button type=\"submit\">Login</button>"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Jesus-Elizalde/exotals/blob/a6941f39c083a5df8e40191ce7cc493c897b8aa3/frontend/src/components/SignupFormPage/index.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>\n        <button type=\"submit\">Login</button>"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/muradkhannovruzov/my-lms/blob/aed40b62b601ab7ca85c287ef37c14466fa7011e/src/main/frontend/src/components/Login/Login.jsx",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>\n        <button type=\"submit\">Login</button>"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/yachika03/bookstore/blob/ae90a44c2d4578891b277a0b02c973cb7ee0aa6d/frontend/src/components/Login.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>\n        <button type=\"submit\">Login</button>"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Bouabidzine/project-Tender-Step2/blob/ec36d9e794d6e964ba94303080ebd239b57d56c9/src/Suppliers/SupplierLogin.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>\n        <button type=\"submit\">Login</button>"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/tachung2/Hackathon/blob/fec2a374053f7c76a34c799c5c3b3bfd89ab16b5/src/main/frontend/src/Signup.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>\n        <button type=\"submit\">Login</button>"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/RobertVogue/SnowJaws/blob/c6e69dca5ebed8600f1a092e4c318fecd2ee5f5e/frontend/src/components/LoginFormModal/LoginForm.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>\n        <button type=\"submit\">Login</button>\n      </form>\n    "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/wylin94/AAw16d1-flickr-clone/blob/f1623594bc8cf5382963b0b582167dbb06242703/frontend/src/components/LoginFormPage/LoginFormPage.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>\n        <button type=\"submit\">Login</button>\n      </form>\n    "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Jesus-Elizalde/exotals/blob/a6941f39c083a5df8e40191ce7cc493c897b8aa3/frontend/src/components/SignupFormPage/index.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>\n        <button type=\"submit\">Login</button>\n      </form>\n    "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/muradkhannovruzov/my-lms/blob/aed40b62b601ab7ca85c287ef37c14466fa7011e/src/main/frontend/src/components/Login/Login.jsx",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>\n        <button type=\"submit\">Login</button>\n      </form>\n    "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/yachika03/bookstore/blob/ae90a44c2d4578891b277a0b02c973cb7ee0aa6d/frontend/src/components/Login.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>\n        <button type=\"submit\">Login</button>\n      </form>\n    "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Bouabidzine/project-Tender-Step2/blob/ec36d9e794d6e964ba94303080ebd239b57d56c9/src/Suppliers/SupplierLogin.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>\n        <button type=\"submit\">Login</button>\n      </form>\n    "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/tachung2/Hackathon/blob/fec2a374053f7c76a34c799c5c3b3bfd89ab16b5/src/main/frontend/src/Signup.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>\n        <button type=\"submit\">Login</button>\n      </form>\n    "
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/RobertVogue/SnowJaws/blob/c6e69dca5ebed8600f1a092e4c318fecd2ee5f5e/frontend/src/components/LoginFormModal/LoginForm.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>\n        <button type=\"submit\">Login</button>\n      </form>\n    </div>\n  );\n}\n\nexport"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/wylin94/AAw16d1-flickr-clone/blob/f1623594bc8cf5382963b0b582167dbb06242703/frontend/src/components/LoginFormPage/LoginFormPage.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>\n        <button type=\"submit\">Login</button>\n      </form>\n    </div>\n  );\n}\n\nexport"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Jesus-Elizalde/exotals/blob/a6941f39c083a5df8e40191ce7cc493c897b8aa3/frontend/src/components/SignupFormPage/index.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>\n        <button type=\"submit\">Login</button>\n      </form>\n    </div>\n  );\n}\n\nexport"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/muradkhannovruzov/my-lms/blob/aed40b62b601ab7ca85c287ef37c14466fa7011e/src/main/frontend/src/components/Login/Login.jsx",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>\n        <button type=\"submit\">Login</button>\n      </form>\n    </div>\n  );\n}\n\nexport"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/yachika03/bookstore/blob/ae90a44c2d4578891b277a0b02c973cb7ee0aa6d/frontend/src/components/Login.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>\n        <button type=\"submit\">Login</button>\n      </form>\n    </div>\n  );\n}\n\nexport"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/Bouabidzine/project-Tender-Step2/blob/ec36d9e794d6e964ba94303080ebd239b57d56c9/src/Suppliers/SupplierLogin.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>\n        <button type=\"submit\">Login</button>\n      </form>\n    </div>\n  );\n}\n\nexport"
+        },
+        {
+          "kind": "codeCitation",
+          "value": {
+            "$mid": 1,
+            "path": "/tachung2/Hackathon/blob/fec2a374053f7c76a34c799c5c3b3bfd89ab16b5/src/main/frontend/src/Signup.js",
+            "scheme": "https",
+            "authority": "github.com"
+          },
+          "license": "unknown",
+          "snippet": "}\n      <form onSubmit={handleSubmit}>\n        <div>\n          <label>Email</label>\n          <input \n            type=\"email\" \n            value={email} \n            onChange={(e) => setEmail(e.target.value)} \n            required \n          />\n        </div>\n        <div>\n          <label>Password</label>\n          <input \n            type=\"password\" \n            value={password} \n            onChange={(e) => setPassword(e.target.value)} \n            required \n          />\n        </div>\n        <button type=\"submit\">Login</button>\n      </form>\n    </div>\n  );\n}\n\nexport"
+        }
+      ],
+      "timestamp": 1746853414747
+    }
+  ]
+}

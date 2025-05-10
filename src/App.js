@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Login from "./components/Login";
+import SellerRequests from "./components/SellerRequests";
+import "./App.css";
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app">
+      <header>
+        <h1>Haul Admin Portal</h1>
+        {isAuthenticated && (
+          <button 
+            className="logout-btn" 
+            onClick={() => setIsAuthenticated(false)}
+          >
+            Logout
+          </button>
+        )}
       </header>
+      
+      <main>
+        {isAuthenticated ? (
+          <SellerRequests />
+        ) : (
+          <Login setIsAuthenticated={setIsAuthenticated} />
+        )}
+      </main>
     </div>
   );
 }
