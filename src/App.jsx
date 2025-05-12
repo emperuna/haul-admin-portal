@@ -19,10 +19,10 @@ function App() {
     return () => unsubscribe();
   }, []);
   
-  // Simple routing logic
+  // Complete routing logic
   const renderPage = () => {
     if (!isAuthenticated) {
-      return <Login />;
+      return <Login setIsAuthenticated={setIsAuthenticated} />;
     }
     
     switch (currentPage) {
@@ -36,31 +36,14 @@ function App() {
     }
   };
   
-  // Listen for navigation events
-  useEffect(() => {
-    const handleNavigation = () => {
-      const path = window.location.pathname;
-      if (path.includes('seller-requests')) {
-        setCurrentPage('seller-requests');
-      } else if (path.includes('users')) {
-        setCurrentPage('users');
-      } else {
-        setCurrentPage('dashboard');
-      }
-    };
-    
-    window.addEventListener('popstate', handleNavigation);
-    handleNavigation();
-    
-    return () => window.removeEventListener('popstate', handleNavigation);
-  }, []);
-  
-  return isAuthenticated ? (
-    <DashboardLayout>
-      {renderPage()}
-    </DashboardLayout>
-  ) : (
-    <Login setIsAuthenticated={setIsAuthenticated} />
+  return (
+    isAuthenticated ? (
+      <DashboardLayout currentPage={currentPage} setCurrentPage={setCurrentPage}>
+        {renderPage()}
+      </DashboardLayout>
+    ) : (
+      <Login setIsAuthenticated={setIsAuthenticated} />
+    )
   );
 }
 

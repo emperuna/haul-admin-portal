@@ -1,12 +1,19 @@
 import { Fragment } from 'react';
 
 const navigation = [
-  { name: 'Dashboard', href: '/', icon: 'dashboard' },
-  { name: 'Seller Requests', href: '/seller-requests', icon: 'store' },
-  { name: 'User Management', href: '/users', icon: 'person' },
+  { name: 'Dashboard', path: 'dashboard', icon: 'dashboard' },
+  { name: 'Seller Requests', path: 'seller-requests', icon: 'store' },
+  { name: 'User Management', path: 'users', icon: 'person' },
 ];
 
-const Sidebar = ({ isOpen, setIsOpen }) => {
+const Sidebar = ({ isOpen, setIsOpen, currentPage, setCurrentPage }) => {
+  
+  // Handle navigation without page reload
+  const handleNavigation = (path) => {
+    setCurrentPage(path);
+    setIsOpen(false); // Close mobile sidebar after navigation
+  };
+  
   return (
     <>
       {/* Mobile sidebar */}
@@ -20,14 +27,18 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
             <div className="flex-1 flex flex-col overflow-y-auto">
               <nav className="flex-1 px-2 py-4 bg-gray-800 space-y-1">
                 {navigation.map((item) => (
-                  <a
+                  <button
                     key={item.name}
-                    href={item.href}
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-base font-medium rounded-md"
+                    onClick={() => handleNavigation(item.path)}
+                    className={`text-left w-full ${
+                      currentPage === item.path 
+                        ? 'bg-gray-900 text-white' 
+                        : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                    } group flex items-center px-2 py-2 text-base font-medium rounded-md`}
                   >
                     <span className="material-icons mr-3">{item.icon}</span>
                     {item.name}
-                  </a>
+                  </button>
                 ))}
               </nav>
             </div>
@@ -44,14 +55,18 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
           <div className="mt-5 flex-1 flex flex-col">
             <nav className="flex-1 px-2 pb-4 space-y-1">
               {navigation.map((item) => (
-                <a
+                <button
                   key={item.name}
-                  href={item.href}
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                  onClick={() => handleNavigation(item.path)}
+                  className={`text-left w-full ${
+                    currentPage === item.path 
+                      ? 'bg-gray-900 text-white' 
+                      : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                  } group flex items-center px-2 py-2 text-sm font-medium rounded-md`}
                 >
                   <span className="material-icons mr-3 text-gray-400">{item.icon}</span>
                   {item.name}
-                </a>
+                </button>
               ))}
             </nav>
           </div>
