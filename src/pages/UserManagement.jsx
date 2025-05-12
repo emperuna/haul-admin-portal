@@ -57,12 +57,18 @@ const UserManagement = () => {
         setLastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
       }
       
+      // Map documents to user objects
       const userData = querySnapshot.docs.map(doc => ({
         id: doc.id,
         ...doc.data()
       }));
       
-      setUsers(userData);
+      // Remove duplicates by using a Map with user.id as key
+      const uniqueUsers = Array.from(
+        new Map(userData.map(user => [user.id, user])).values()
+      );
+      
+      setUsers(uniqueUsers);
     } catch (error) {
       console.error("Error fetching users:", error);
     } finally {
@@ -127,6 +133,26 @@ const UserManagement = () => {
       setConfirmAction(null);
     } catch (error) {
       console.error("Error toggling user status:", error);
+    }
+  };
+
+  const toggleEmailVerification = async (userId, currentStatus) => {
+    try {
+      const userRef = doc(db, "users", userId);
+      await updateDoc(userRef, {
+        emailVerified: !currentStatus,
+        updatedAt: new Date()
+      });
+
+      // Update local state
+      setUsers(users.map(user =>
+        user.id === userId
+          ? { ...user, emailVerified: !currentStatus }
+          : user
+      ));
+
+    } catch (error) {
+      console.error("Error toggling email verification:", error);
     }
   };
 
@@ -260,6 +286,8 @@ const UserManagement = () => {
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Roles</th>
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Created At</th>
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email Verified</th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
             </tr>
@@ -267,7 +295,7 @@ const UserManagement = () => {
           <tbody className="bg-white divide-y divide-gray-200">
             {filteredUsers.length === 0 && !loading ? (
               <tr>
-                <td colSpan="5" className="px-6 py-4 text-center text-sm text-gray-500">
+                <td colSpan="7" className="px-6 py-4 text-center text-sm text-gray-500">
                   {searchTerm || roleFilter !== 'all' ? 'No users match the current filters' : 'No users found'}
                 </td>
               </tr>
@@ -302,6 +330,22 @@ const UserManagement = () => {
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="text-sm text-gray-500">
+                      {user.createdAt?.toDate ? 
+                        user.createdAt.toDate().toLocaleDateString() : 
+                        user.metadata?.creationTime ? 
+                          new Date(user.metadata.creationTime).toLocaleDateString() : 
+                          'Unknown'}
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                      user.emailVerified ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
+                    }`}>
+                      {user.emailVerified ? 'Verified' : 'Not Verified'}
+                    </span>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
                     <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
                       user.disabled ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'
                     }`}>
@@ -314,6 +358,13 @@ const UserManagement = () => {
                       className="text-blue-600 hover:text-blue-900 mr-3"
                     >
                       Edit Roles
+                    </button>
+                    <button 
+                      onClick={() => toggleEmailVerification(user.id, user.emailVerified)}
+                      className="text-purple-600 hover:text-purple-900 mr-3"
+                      title={user.emailVerified ? "Mark as unverified" : "Mark as verified"}
+                    >
+                      {user.emailVerified ? "Unverify" : "Verify"}
                     </button>
                     <button 
                       onClick={() => openConfirmModal(user.disabled ? 'enable' : 'disable', user)}
