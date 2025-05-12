@@ -7,6 +7,11 @@ import DashboardLayout from './components/layout/DashboardLayout';
 import { auth } from './services/firebase';
 import './index.css';
 
+/**
+ * Main application component that manages authentication state and page routing.
+ *
+ * Renders the login page if the user is not authenticated. Once authenticated, displays the dashboard layout and routes to the appropriate page component based on the current selection.
+ */
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentPage, setCurrentPage] = useState('dashboard');
