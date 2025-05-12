@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { collection, query, getDocs, doc, updateDoc, where, orderBy, limit, startAfter } from 'firebase/firestore';
+import { collection, query, getDocs, doc, updateDoc, where, orderBy, limit, startAfter, getDoc } from 'firebase/firestore';
 import { db } from '../services/firebase';
+import { getAuth, fetchSignInMethodsForEmail, onAuthStateChanged } from "firebase/auth";
 
 const UserManagement = () => {
   const [users, setUsers] = useState([]);
@@ -179,6 +180,7 @@ const UserManagement = () => {
     }
   };
 
+
   const openEditModal = (user) => {
     setEditingUser({
       ...user,
@@ -282,11 +284,9 @@ const UserManagement = () => {
       <div className="bg-white shadow overflow-hidden sm:rounded-lg">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
-            <tr>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+            <tr>              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Roles</th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Created At</th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email Verified</th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
@@ -294,8 +294,7 @@ const UserManagement = () => {
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
             {filteredUsers.length === 0 && !loading ? (
-              <tr>
-                <td colSpan="7" className="px-6 py-4 text-center text-sm text-gray-500">
+              <tr>                <td colSpan="6" className="px-6 py-4 text-center text-sm text-gray-500">
                   {searchTerm || roleFilter !== 'all' ? 'No users match the current filters' : 'No users found'}
                 </td>
               </tr>
@@ -327,15 +326,6 @@ const UserManagement = () => {
                           User
                         </span>
                       )}
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-500">
-                      {user.createdAt?.toDate ? 
-                        user.createdAt.toDate().toLocaleDateString() : 
-                        user.metadata?.creationTime ? 
-                          new Date(user.metadata.creationTime).toLocaleDateString() : 
-                          'Unknown'}
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
