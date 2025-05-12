@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, setPersistence, browserLocalPersistence } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 import { auth, db } from "../services/firebase";
 
@@ -15,6 +15,9 @@ function Login({ setIsAuthenticated }) {
     setError(null);
     
     try {
+      // Set persistence to LOCAL (survives browser restart)
+      await setPersistence(auth, browserLocalPersistence);
+      
       // Sign in with Firebase Auth
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;

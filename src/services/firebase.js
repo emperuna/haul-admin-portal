@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
+import { getFunctions } from "firebase/functions";
 import { useEffect } from "react";
 
 const firebaseConfig = {
@@ -19,5 +20,6 @@ console.log("Firebase project ID:", import.meta.env.VITE_FIREBASE_PROJECT_ID);
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
+const functions = getFunctions(app);
 
-export { db, auth };
+export { app, db, auth, functions };
