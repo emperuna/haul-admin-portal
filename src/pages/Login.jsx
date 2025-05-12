@@ -3,6 +3,13 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 import { auth, db } from "../services/firebase";
 
+/**
+ * Renders an admin login form that authenticates users via Firebase and verifies admin privileges using Firestore.
+ *
+ * On successful sign-in and admin role verification, calls {@link setIsAuthenticated} with `true`. Displays error messages for authentication failures or insufficient privileges.
+ *
+ * @param {{ setIsAuthenticated: (isAuthenticated: boolean) => void }} props - Callback to update authentication status in the parent component.
+ */
 function Login({ setIsAuthenticated }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
