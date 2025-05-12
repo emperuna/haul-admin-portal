@@ -8,8 +8,8 @@ const UserManagement = () => {
   const [filteredUsers, setFilteredUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
-  const [roleFilter, setRoleFilter] = useState('all');
-  const [editingUser, setEditingUser] = useState(null);
+  const [roleFilter, setRoleFilter] = useState('all');  const [editingUser, setEditingUser] = useState(null);
+  const [renamingUser, setRenamingUser] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [confirmAction, setConfirmAction] = useState(null);
   
@@ -59,10 +59,17 @@ const UserManagement = () => {
       }
       
       // Map documents to user objects
-      const userData = querySnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
+      const userData = querySnapshot.docs.map(doc => {
+        const data = doc.data();
+        // Set emailVerified to true if the user signed in with Google
+        if (data.providerData && data.providerData.some(provider => provider.providerId === 'google.com')) {
+          data.emailVerified = true;
+        }
+        return {
+          id: doc.id,
+          ...data
+        };
+      });
       
       // Remove duplicates by using a Map with user.id as key
       const uniqueUsers = Array.from(
@@ -100,7 +107,7 @@ const UserManagement = () => {
       const lowerSearchTerm = searchTerm.toLowerCase();
       filtered = filtered.filter(user => 
         (user.email && user.email.toLowerCase().includes(lowerSearchTerm)) ||
-        (user.displayName && user.displayName.toLowerCase().includes(lowerSearchTerm))
+        (user.fullName && user.fullName.toLowerCase().includes(lowerSearchTerm))
       );
     }
     
@@ -139,7 +146,18 @@ const UserManagement = () => {
 
   const toggleEmailVerification = async (userId, currentStatus) => {
     try {
+      // First check if the user signed in with Google
       const userRef = doc(db, "users", userId);
+      const userDoc = await getDoc(userRef);
+      const userData = userDoc.data();
+      
+      // If user signed in with Google, don't allow changing verification status
+      if (userData.providerData && userData.providerData.some(provider => provider.providerId === 'google.com')) {
+        alert("Google sign-in users are always verified. Status cannot be changed.");
+        return;
+      }
+      
+      // For email/password users, allow changing verification status
       await updateDoc(userRef, {
         emailVerified: !currentStatus,
         updatedAt: new Date()
@@ -154,9 +172,9 @@ const UserManagement = () => {
 
     } catch (error) {
       console.error("Error toggling email verification:", error);
+      alert("Failed to update email verification status: " + error.message);
     }
   };
-
   const updateUserRoles = async (userId, newRoles) => {
     try {
       const userRef = doc(db, "users", userId);
@@ -178,6 +196,45 @@ const UserManagement = () => {
     } catch (error) {
       console.error("Error updating user roles:", error);
     }
+  };
+
+  const updateUserName = async (userId, newName) => {
+    try {
+      const userRef = doc(db, "users", userId);
+      await updateDoc(userRef, {
+        fullName: newName,
+        updatedAt: new Date()
+      });
+      
+      // Update local state
+      setUsers(users.map(user => 
+        user.id === userId 
+          ? { ...user, fullName: newName }
+          : user
+      ));
+      
+      // Close modal
+      setShowModal(false);
+      setRenamingUser(null);
+    } catch (error) {
+      console.error("Error updating user name:", error);
+      alert("Failed to update user name: " + error.message);
+    }
+  };
+
+  const openRenameModal = (user) => {
+    setRenamingUser({
+      id: user.id,
+      fullName: user.fullName || '',
+      email: user.email
+    });
+    setShowModal(true);
+  };
+  const handleRenameInputChange = (e) => {
+    setRenamingUser({
+      ...renamingUser,
+      fullName: e.target.value
+    });
   };
 
 
@@ -300,10 +357,9 @@ const UserManagement = () => {
               </tr>
             ) : (
               filteredUsers.map(user => (
-                <tr key={user.id}>
-                  <td className="px-6 py-4 whitespace-nowrap">
+                <tr key={user.id}>                  <td className="px-6 py-4 whitespace-nowrap">
                     <div className="text-sm font-medium text-gray-900">
-                      {user.displayName || 'N/A'}
+                      {user.fullName || (user.email ? user.email.split('@')[0] : 'N/A')}
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
@@ -329,11 +385,19 @@ const UserManagement = () => {
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                      user.emailVerified ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
-                    }`}>
-                      {user.emailVerified ? 'Verified' : 'Not Verified'}
-                    </span>
+                    <div className="flex items-center">
+                      <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                        user.emailVerified ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
+                      }`}>
+                        {user.emailVerified ? 'Verified' : 'Not Verified'}
+                      </span>
+                      
+                      {user.providerData?.some(provider => provider.providerId === 'google.com') && (
+                        <span className="ml-2 px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-800" title="Google Account">
+                          Google
+                        </span>
+                      )}
+                    </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
@@ -341,8 +405,13 @@ const UserManagement = () => {
                     }`}>
                       {user.disabled ? 'Disabled' : 'Active'}
                     </span>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm">
+                  </td>                  <td className="px-6 py-4 whitespace-nowrap text-sm">
+                    <button 
+                      onClick={() => openRenameModal(user)}
+                      className="text-gray-600 hover:text-gray-900 mr-3"
+                    >
+                      Rename
+                    </button>
                     <button 
                       onClick={() => openEditModal(user)}
                       className="text-blue-600 hover:text-blue-900 mr-3"
@@ -352,7 +421,10 @@ const UserManagement = () => {
                     <button 
                       onClick={() => toggleEmailVerification(user.id, user.emailVerified)}
                       className="text-purple-600 hover:text-purple-900 mr-3"
-                      title={user.emailVerified ? "Mark as unverified" : "Mark as verified"}
+                      title={user.providerData?.some(provider => provider.providerId === 'google.com') 
+                        ? "Google users are always verified" 
+                        : user.emailVerified ? "Mark as unverified" : "Mark as verified"}
+                      disabled={user.providerData?.some(provider => provider.providerId === 'google.com')}
                     >
                       {user.emailVerified ? "Unverify" : "Verify"}
                     </button>
@@ -478,6 +550,63 @@ const UserManagement = () => {
                   onClick={() => {
                     setShowModal(false);
                     setEditingUser(null);
+                  }}
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}      {/* Rename User Modal */}
+      {showModal && renamingUser && (
+        <div className="fixed z-50 inset-0 overflow-y-auto">
+          <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div className="fixed inset-0 transition-opacity" aria-hidden="true">
+              <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+            <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+              <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                <div className="sm:flex sm:items-start">
+                  <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                    <h3 className="text-lg leading-6 font-medium text-gray-900 mb-4">
+                      Update User Name
+                    </h3>
+                    <div className="mt-2">
+                      <p className="text-sm text-gray-500 mb-4">
+                        User: <span className="font-semibold">{renamingUser.email}</span>
+                      </p>
+                      <div className="mt-4">
+                        <label htmlFor="full-name" className="block text-sm font-medium text-gray-700">
+                          Full Name
+                        </label>
+                        <input
+                          type="text"
+                          id="full-name"
+                          className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                          value={renamingUser.fullName}
+                          onChange={handleRenameInputChange}
+                          placeholder="Enter full name"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                <button 
+                  type="button" 
+                  className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
+                  onClick={() => updateUserName(renamingUser.id, renamingUser.fullName)}
+                >
+                  Update Name
+                </button>
+                <button 
+                  type="button" 
+                  className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                  onClick={() => {
+                    setShowModal(false);
+                    setRenamingUser(null);
                   }}
                 >
                   Cancel
