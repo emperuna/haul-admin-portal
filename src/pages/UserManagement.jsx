@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { collection, query, getDocs, doc, updateDoc, where, orderBy, limit, startAfter, getDoc } from 'firebase/firestore';
 import { db } from '../services/firebase';
-import { getAuth, fetchSignInMethodsForEmail, onAuthStateChanged } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 
 const UserManagement = () => {
   const [users, setUsers] = useState([]);
@@ -20,9 +20,38 @@ const UserManagement = () => {
   const [lastVisible, setLastVisible] = useState(null);
 
   useEffect(() => {
-    fetchUsers();
+    checkAdminAndFetchUsers();
   }, [pageSize]);
-
+  
+  // Check if user is admin then fetch users
+  const checkAdminAndFetchUsers = async () => {
+    try {
+      const auth = getAuth();
+      const user = auth.currentUser;
+      
+      if (!user) {
+        console.error("No user is signed in");
+        alert("You must be signed in to view this page");
+        setLoading(false);
+        return;
+      }
+      
+      // Check if user has admin role
+      const userDoc = await getDoc(doc(db, "users", user.uid));
+      if (userDoc.exists() && userDoc.data().roles?.includes('admin')) {
+        fetchUsers();
+      } else {
+        console.error("User is not an admin");
+        alert("You don't have permission to view this page");
+        setLoading(false);
+      }
+    } catch (err) {
+      console.error("Error checking admin status:", err);
+      alert("Authentication error. Please try again.");
+      setLoading(false);
+    }
+  };
+  
   // Apply filters whenever users, searchTerm, or roleFilter changes
   useEffect(() => {
     applyFilters();
@@ -31,54 +60,60 @@ const UserManagement = () => {
   const fetchUsers = async (startAfterDoc = null) => {
     try {
       setLoading(true);
-      let q;
       
-      if (startAfterDoc) {
-        q = query(
-          collection(db, "users"),
-          orderBy("email"),
-          startAfter(startAfterDoc),
-          limit(pageSize)
-        );
-      } else {
-        q = query(
-          collection(db, "users"),
-          orderBy("email"),
-          limit(pageSize)
-        );
-      }
-      
-      const querySnapshot = await getDocs(q);
-      
-      // Get total count for pagination
-      const totalCountSnapshot = await getDocs(collection(db, "users"));
-      setTotalUsers(totalCountSnapshot.size);
-      
-      if (!querySnapshot.empty) {
-        setLastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
-      }
-      
-      // Map documents to user objects
-      const userData = querySnapshot.docs.map(doc => {
-        const data = doc.data();
-        // Set emailVerified to true if the user signed in with Google
-        if (data.providerData && data.providerData.some(provider => provider.providerId === 'google.com')) {
-          data.emailVerified = true;
-        }
-        return {
-          id: doc.id,
-          ...data
-        };
-      });
-      
-      // Remove duplicates by using a Map with user.id as key
-      const uniqueUsers = Array.from(
-        new Map(userData.map(user => [user.id, user])).values()
+      // Create query
+      let usersQuery = query(
+        collection(db, "users"),
+        orderBy("email"), // Order by email or another field that exists on all documents
+        limit(pageSize)
       );
       
-      setUsers(uniqueUsers);
+      // If we have a starting document for pagination
+      if (startAfterDoc) {
+        const docRef = doc(db, "users", startAfterDoc);
+        const docSnap = await getDoc(docRef);
+        
+        if (docSnap.exists()) {
+          usersQuery = query(
+            collection(db, "users"),
+            orderBy("email"),
+            startAfter(docSnap),
+            limit(pageSize)
+          );
+        }
+      }
+      
+      // Execute query
+      const querySnapshot = await getDocs(usersQuery);
+      
+      // Get total count (for small collections)
+      const totalSnapshot = await getDocs(collection(db, "users"));
+      const total = totalSnapshot.size;
+      
+      // Process results
+      const userData = [];
+      querySnapshot.forEach((doc) => {
+        userData.push({
+          id: doc.id,
+          ...doc.data()
+        });
+      });
+      
+      // Update state
+      setUsers(userData);
+      setFilteredUsers(userData);
+      setTotalUsers(total);
+      
+      // Set last visible document for pagination
+      const lastDoc = querySnapshot.docs[querySnapshot.docs.length - 1];
+      setLastVisible(lastDoc?.id || null);
+      
+      // Update page number
+      setCurrentPage(startAfterDoc ? currentPage + 1 : 1);
+      
     } catch (error) {
       console.error("Error fetching users:", error);
+      alert("Failed to load users. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -104,10 +139,10 @@ const UserManagement = () => {
     
     // Apply search term filter
     if (searchTerm) {
-      const lowerSearchTerm = searchTerm.toLowerCase();
+      const searchLower = searchTerm.toLowerCase();
       filtered = filtered.filter(user => 
-        (user.email && user.email.toLowerCase().includes(lowerSearchTerm)) ||
-        (user.fullName && user.fullName.toLowerCase().includes(lowerSearchTerm))
+        (user.email && user.email.toLowerCase().includes(searchLower)) ||
+        (user.fullName && user.fullName.toLowerCase().includes(searchLower))
       );
     }
     

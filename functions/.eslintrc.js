@@ -6,11 +6,12 @@ module.exports = {
   },
   extends: [
     "eslint:recommended",
-    "google",
   ],
   rules: {
     "quotes": ["error", "double"],
-    "max-len": ["error", {"code": 120}],
+    "semi": ["error", "always"],
+    "no-unused-vars": ["warn"],
+    "no-trailing-spaces": ["warn"]
   },
   parserOptions: {
     ecmaVersion: 2018,

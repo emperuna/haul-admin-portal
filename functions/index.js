@@ -35,3 +35,94 @@ exports.getUserCreationDate = functions.https.onCall(async (data, context) => {
     throw new functions.https.HttpsError("unknown", error.message);
   }
 });
+
+// Function to get all users for admin dashboard
+exports.getAllUsers = functions.https.onCall(async (data, context) => {
+  // Verify authentication
+  if (!context.auth) {
+    throw new functions.https.HttpsError("unauthenticated", "Must be signed in");
+  }
+  
+  // Verify admin permissions
+  const callerUid = context.auth.uid;
+  const callerData = await admin.firestore().collection("users").doc(callerUid).get();
+  
+  if (!callerData.exists || !callerData.data().roles || !callerData.data().roles.includes("admin")) {
+    throw new functions.https.HttpsError("permission-denied", "Must be an admin");
+  }
+  
+  // Fetch users with pagination
+  const { pageSize = 10, lastVisible = null } = data;
+  
+  try {
+    let usersQuery = admin.firestore().collection("users").limit(pageSize);
+    
+    if (lastVisible) {
+      usersQuery = usersQuery.startAfter(lastVisible);
+    }
+    
+    const snapshot = await usersQuery.get();
+    const users = [];
+    
+    snapshot.forEach(doc => {
+      users.push({
+        id: doc.id,
+        ...doc.data()
+      });
+    });
+    
+    const lastDoc = snapshot.docs[snapshot.docs.length - 1];
+    
+    return {
+      users,
+      lastVisible: lastDoc ? lastDoc.id : null
+    };
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    throw new functions.https.HttpsError("internal", "Error fetching users");
+  }
+});
+
+// Function to get dashboard statistics
+exports.getDashboardStats = functions.https.onCall(async (data, context) => {
+  // Verify authentication
+  if (!context.auth) {
+    throw new functions.https.HttpsError("unauthenticated", "Must be signed in");
+  }
+  
+  // Verify admin permissions
+  const callerUid = context.auth.uid;
+  const callerData = await admin.firestore().collection("users").doc(callerUid).get();
+  
+  if (!callerData.exists || !callerData.data().roles || !callerData.data().roles.includes("admin")) {
+    throw new functions.https.HttpsError("permission-denied", "Must be an admin");
+  }
+  
+  try {
+    // Get user count
+    const userSnapshot = await admin.firestore().collection("users").get();
+    const userCount = userSnapshot.size;
+    
+    // Get product count
+    const productSnapshot = await admin.firestore().collection("products").get();
+    const productCount = productSnapshot.size;
+    
+    // Get order count
+    const orderSnapshot = await admin.firestore().collection("orders").get();
+    const orderCount = orderSnapshot.size;
+    
+    // Get seller count
+    const sellerSnapshot = await admin.firestore().collection("sellers").get();
+    const sellerCount = sellerSnapshot.size;
+    
+    return {
+      userCount,
+      productCount,
+      orderCount,
+      sellerCount
+    };
+  } catch (error) {
+    console.error("Error fetching dashboard stats:", error);
+    throw new functions.https.HttpsError("internal", "Error fetching dashboard statistics");
+  }
+});

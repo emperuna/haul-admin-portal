@@ -1,159 +1,128 @@
 import React, { useState, useEffect } from 'react';
+import { getAuth } from 'firebase/auth';
+import { doc, getDoc, collection, getDocs } from 'firebase/firestore';
 import { db } from '../services/firebase';
-import { collection, query, where, getDocs, limit } from 'firebase/firestore';
-
-const fetchRecentActivity = async () => {
-  const activityQuery = query(
-    collection(db, "activity_logs"),
-    limit(10) // Fetch the 10 most recent activities
-  );
-  const activitySnapshot = await getDocs(activityQuery);
-  return activitySnapshot.docs.map(doc => ({
-    id: doc.id,
-    ...doc.data()
-  }));
-};
-
-const StatCard = ({ title, value, icon, color }) => (
-  <div className="bg-white overflow-hidden shadow rounded-lg">
-    <div className="p-5">
-      <div className="flex items-center">
-        <div className={`flex-shrink-0 rounded-md p-3 ${color}`}>
-          <span className="material-icons text-white">{icon}</span>
-        </div>
-        <div className="ml-5 w-0 flex-1">
-          <dl>
-            <dt className="text-sm font-medium text-gray-500 truncate">{title}</dt>
-            <dd>
-              <div className="text-lg font-semibold text-gray-900">{value}</div>
-            </dd>
-          </dl>
-        </div>
-      </div>
-    </div>
-  </div>
-);
 
 const Dashboard = () => {
-  const [stats, setStats] = useState({
-    pendingRequests: 0,
-    totalSellers: 0,
-    totalUsers: 0,
-    recentActivity: []
-  });
+  const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(false);
 
+  // Check if user is admin on component mount
   useEffect(() => {
-    const fetchData = async () => {
+    const checkAdminStatus = async () => {
       try {
-        setLoading(true);
-
-        // Fetch pending seller requests
-        const pendingRequestsQuery = query(
-          collection(db, "sellers"), 
-          where("status", "==", "pending")
-        );
-        const pendingRequestsSnapshot = await getDocs(pendingRequestsQuery);
-
-        // Fetch approved sellers
-        const sellersQuery = query(
-          collection(db, "sellers"),
-          where("status", "==", "approved")
-        );
-        const sellersSnapshot = await getDocs(sellersQuery);
-
-        // Fetch total users
-        const usersQuery = query(collection(db, "users"));
-        const usersSnapshot = await getDocs(usersQuery);
-
-        // Fetch recent activity
-        const activityQuery = query(
-          collection(db, "activity_logs"),
-          limit(10)
-        );
-        const activitySnapshot = await getDocs(activityQuery);
-        const recentActivity = activitySnapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data()
-        }));
-
-        setStats({
-          pendingRequests: pendingRequestsSnapshot.size,
-          totalSellers: sellersSnapshot.size,
-          totalUsers: usersSnapshot.size,
-          recentActivity
-        });
-      } catch (error) {
-        console.error("Error fetching dashboard data:", error);
-        alert("Failed to load dashboard data. Please try again later.");
-      } finally {
+        const auth = getAuth();
+        const user = auth.currentUser;
+        
+        if (!user) {
+          console.error("No user is signed in");
+          setError("You must be signed in to view this page");
+          setLoading(false);
+          return;
+        }
+        
+        // Check if user has admin role
+        const userDoc = await getDoc(doc(db, "users", user.uid));
+        if (userDoc.exists() && userDoc.data().roles?.includes('admin')) {
+          setIsAdmin(true);
+          fetchDashboardStats();
+        } else {
+          console.error("User is not an admin");
+          setError("You don't have permission to view this page");
+          setLoading(false);
+        }
+      } catch (err) {
+        console.error("Error checking admin status:", err);
+        setError("Authentication error. Please try again.");
         setLoading(false);
       }
     };
-
-    fetchData();
+    
+    checkAdminStatus();
   }, []);
-  
+
+  const fetchDashboardStats = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      
+      // Direct Firestore queries - much simpler!
+      const userCount = (await getDocs(collection(db, "users"))).size;
+      const productCount = (await getDocs(collection(db, "products"))).size;
+      const orderCount = (await getDocs(collection(db, "orders"))).size;
+      const sellerCount = (await getDocs(collection(db, "sellers"))).size;
+      
+      setStats({
+        userCount,
+        productCount,
+        orderCount,
+        sellerCount
+      });
+    } catch (err) {
+      console.error("Error fetching stats:", err);
+      setError("Failed to load dashboard data. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleRetry = () => {
+    fetchDashboardStats();
+  };
+
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-64">
+      <div className="flex justify-center items-center py-12">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
       </div>
     );
   }
 
+  if (error) {
+    return (
+      <div className="text-center py-8">
+        <div className="text-red-500 mb-4">{error}</div>
+        <button
+          onClick={handleRetry}
+          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+        >
+          Retry
+        </button>
+      </div>
+    );
+  }
+
   return (
-    <div>
-      <h2 className="text-2xl font-semibold text-gray-900 mb-6">Dashboard</h2>
+    <div className="p-6">
+      <h1 className="text-2xl font-semibold mb-6">Dashboard</h1>
       
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        <StatCard 
-          title="Pending Seller Requests" 
-          value={stats.pendingRequests} 
-          icon="store" 
-          color="bg-orange-500"
-        />
-        <StatCard 
-          title="Total Sellers" 
-          value={stats.totalSellers} 
-          icon="shopping_bag" 
-          color="bg-blue-500"
-        />
-        <StatCard 
-          title="Total Users" 
-          value={stats.totalUsers} 
-          icon="people" 
-          color="bg-green-500"
-        />
-      </div>
-      
-      <div className="mt-8">
-        <h3 className="text-lg font-semibold text-gray-700 mb-4">Recent Activity</h3>
-        <div className="bg-white shadow overflow-hidden sm:rounded-md">
-          {stats.recentActivity.length === 0 ? (
-            <div className="px-4 py-5 text-center text-gray-500">
-              No recent activity
-            </div>
-          ) : (
-            <ul className="divide-y divide-gray-200">
-              {stats.recentActivity.map((activity, index) => (
-                <li key={index} className="px-4 py-4">
-                  <div className="flex items-center">
-                    <div className="min-w-0 flex-1">
-                      <p className="text-sm font-medium text-gray-900 truncate">
-                        {activity.description}
-                      </p>
-                      <p className="text-sm text-gray-500">
-                        {activity.timestamp?.toDate().toLocaleString()}
-                      </p>
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          )}
+      {stats ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="bg-white rounded-lg shadow p-6">
+            <div className="text-gray-500 text-sm">Total Users</div>
+            <div className="text-3xl font-bold mt-2">{stats.userCount || 0}</div>
+          </div>
+          
+          <div className="bg-white rounded-lg shadow p-6">
+            <div className="text-gray-500 text-sm">Total Products</div>
+            <div className="text-3xl font-bold mt-2">{stats.productCount || 0}</div>
+          </div>
+          
+          <div className="bg-white rounded-lg shadow p-6">
+            <div className="text-gray-500 text-sm">Total Orders</div>
+            <div className="text-3xl font-bold mt-2">{stats.orderCount || 0}</div>
+          </div>
+          
+          <div className="bg-white rounded-lg shadow p-6">
+            <div className="text-gray-500 text-sm">Total Sellers</div>
+            <div className="text-3xl font-bold mt-2">{stats.sellerCount || 0}</div>
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="text-center">No dashboard data available</div>
+      )}
     </div>
   );
 };
