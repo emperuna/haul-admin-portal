@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getAuth } from 'firebase/auth';
-import { doc, getDoc, collection, getDocs } from 'firebase/firestore';
+import { doc, getDoc, collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../services/firebase';
 
 const Dashboard = () => {
@@ -54,11 +54,39 @@ const Dashboard = () => {
       const orderCount = (await getDocs(collection(db, "orders"))).size;
       const sellerCount = (await getDocs(collection(db, "sellers"))).size;
       
+      // Get active products count
+      const activeProductsSnapshot = await getDocs(
+        query(collection(db, "products"), where("isActive", "==", true))
+      );
+      const activeProductCount = activeProductsSnapshot.size;
+      
+      // Get low stock products count
+      const lowStockSnapshot = await getDocs(
+        query(collection(db, "products"), where("currentStock", "<=", 5))
+      );
+      const lowStockCount = lowStockSnapshot.size;
+      
+      // Get pending seller requests
+      const pendingSellerRequestsSnapshot = await getDocs(
+        query(collection(db, "sellers"), where("status", "==", "pending"))
+      );
+      const pendingSellerRequests = pendingSellerRequestsSnapshot.size;
+      
+      // Get approved sellers
+      const approvedSellersSnapshot = await getDocs(
+        query(collection(db, "sellers"), where("status", "==", "approved"))
+      );
+      const approvedSellers = approvedSellersSnapshot.size;
+      
       setStats({
         userCount,
         productCount,
+        activeProductCount,
+        lowStockCount,
         orderCount,
-        sellerCount
+        sellerCount,
+        pendingSellerRequests,
+        approvedSellers
       });
     } catch (err) {
       console.error("Error fetching stats:", err);
@@ -118,6 +146,26 @@ const Dashboard = () => {
           <div className="bg-white rounded-lg shadow p-6">
             <div className="text-gray-500 text-sm">Total Sellers</div>
             <div className="text-3xl font-bold mt-2">{stats.sellerCount || 0}</div>
+          </div>
+
+          <div className="bg-white rounded-lg shadow p-6">
+            <div className="text-gray-500 text-sm">Active Products</div>
+            <div className="text-3xl font-bold mt-2">{stats.activeProductCount || 0}</div>
+          </div>
+
+          <div className="bg-white rounded-lg shadow p-6">
+            <div className="text-gray-500 text-sm">Low Stock Items</div>
+            <div className="text-3xl font-bold mt-2 text-red-600">{stats.lowStockCount || 0}</div>
+          </div>
+
+          <div className="bg-white rounded-lg shadow p-6">
+            <div className="text-gray-500 text-sm">Pending Seller Requests</div>
+            <div className="text-3xl font-bold mt-2 text-orange-600">{stats.pendingSellerRequests || 0}</div>
+          </div>
+
+          <div className="bg-white rounded-lg shadow p-6">
+            <div className="text-gray-500 text-sm">Approved Sellers</div>
+            <div className="text-3xl font-bold mt-2 text-green-600">{stats.approvedSellers || 0}</div>
           </div>
         </div>
       ) : (

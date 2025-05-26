@@ -16,3 +16,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Smooth transitions for sidebar */
+.sidebar-transition {
+  transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Hide scrollbar for better mobile experience */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ensure material icons load properly */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
